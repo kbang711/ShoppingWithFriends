@@ -96,7 +96,8 @@
         android:id="@+id/button_initialRegister"
         android:layout_below="@+id/button1"
         android:layout_alignStart="@+id/button1"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp"
+        android:onClick="initRegisterClick"/>
 
     <TextView
         android:layout_width="wrap_content"

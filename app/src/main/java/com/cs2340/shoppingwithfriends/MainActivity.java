@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+public class MainActivity extends ActionBarActivity {
 
     /* Added variables - Kevin Bang*/
     private EditText username = null;
@@ -34,26 +34,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         attempts.setText(Integer.toString(counter));
         login = (Button)findViewById(R.id.button1);
         initRegister = (Button)findViewById(R.id.button_initialRegister);
-        initRegister.setOnClickListener(this);
     }
 
     /**
-     * Method for when a button is clicked
-     * @param view
+     * Method for when initial Registration button is clicked
      */
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button_initialRegister:
-                initRegisterClick();
-                break;
-        }
-    }
-
-    /**
-     * Starts the registration page when Register button is clicked
-     */
-    private void initRegisterClick() {
-        startActivity(new Intent("com.cs2340.shoppingwithfriends.Registration"));
+    public void initRegisterClick(View view) {
+        startActivity(new Intent(getApplicationContext(), Registration.class));
     }
 
     /* Login Method
