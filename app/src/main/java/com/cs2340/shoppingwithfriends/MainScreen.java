@@ -1,38 +1,30 @@
 package com.cs2340.shoppingwithfriends;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+//Added more imports
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.view.View;
 
-public class MainActivity extends ActionBarActivity {
-
-    /* Added variables - Kevin Bang*/
-    private Button login, initRegister;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //Adding username, pw, and attempts
-        login = (Button)findViewById(R.id.button1);
-        initRegister = (Button)findViewById(R.id.button_initialRegister);
-    }
-
+/**
+ * Created by Kevin Bang on 1/30/2015.
+ */
+public class MainScreen extends ActionBarActivity {
     /**
-     * Method for when initial Registration button is clicked
+     * Called when activity is first created
      */
-    public void initRegisterClick(View view) {
-        startActivity(new Intent(getApplicationContext(), Registration.class));
-    }
-
-    /* Login Method
-     */
-    public void login(View view) {
-        startActivity(new Intent(getApplicationContext(), Login.class));
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mainscreen);
     }
 
     @Override
