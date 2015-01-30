@@ -1,5 +1,7 @@
 package com.cs2340.shoppingwithfriends;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,13 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     /* Added variables - Kevin Bang*/
     private EditText username = null;
     private EditText password = null;
     private TextView attempts;
-    private Button login;
+    private Button login, initRegister;
     int counter = 3;
 
     @Override
@@ -31,6 +33,27 @@ public class MainActivity extends ActionBarActivity {
         attempts = (TextView)findViewById(R.id.textView5);
         attempts.setText(Integer.toString(counter));
         login = (Button)findViewById(R.id.button1);
+        initRegister = (Button)findViewById(R.id.button_initialRegister);
+        initRegister.setOnClickListener(this);
+    }
+
+    /**
+     * Method for when a button is clicked
+     * @param view
+     */
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_initialRegister:
+                initRegisterClick();
+                break;
+        }
+    }
+
+    /**
+     * Starts the registration page when Register button is clicked
+     */
+    private void initRegisterClick() {
+        startActivity(new Intent("com.cs2340.shoppingwithfriends.Registration"));
     }
 
     /* Login Method
