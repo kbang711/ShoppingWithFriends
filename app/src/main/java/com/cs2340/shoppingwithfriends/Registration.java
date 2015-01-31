@@ -18,6 +18,11 @@ import android.view.View;
  * Created by Kevin Bang on 1/30/2015.
  */
 public class Registration extends ActionBarActivity {
+    private EditText username = null;
+    private EditText password = null;
+    private EditText password2 = null;
+    private EditText email = null;
+    private Button register;
     /**
      * Called when activity is first created
      */
@@ -25,6 +30,28 @@ public class Registration extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        email = (EditText)findViewById(R.id.editTextEmail);
+        username = (EditText)findViewById(R.id.editText1);
+        password = (EditText)findViewById(R.id.editText2);
+        password2 = (EditText)findViewById(R.id.editTextPW2);
+        register = (Button)findViewById(R.id.button1);
+    }
+
+    /**
+     * Registers the user
+     * @param view
+     */
+    public void register(View view) {
+
+    }
+
+    /**
+     * Cancel method to go back to main screen
+     * @param view
+     * @return
+     */
+    public void cancel(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
     @Override
