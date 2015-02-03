@@ -22,7 +22,7 @@ public class Registration extends ActionBarActivity {
     private EditText password = null;
     private EditText password2 = null;
     private EditText email = null;
-    private Button register;
+    private Button register, cancel;
     /**
      * Called when activity is first created
      */
@@ -35,6 +35,7 @@ public class Registration extends ActionBarActivity {
         password = (EditText)findViewById(R.id.editText2);
         password2 = (EditText)findViewById(R.id.editTextPW2);
         register = (Button)findViewById(R.id.button1);
+        cancel = (Button)findViewById(R.id.cancel);
     }
 
     /**
@@ -42,7 +43,7 @@ public class Registration extends ActionBarActivity {
      * @param view
      */
     public void register(View view) {
-
+        startActivity(new Intent(getApplicationContext(), MainScreen.class));
     }
 
     /**
