@@ -43,7 +43,14 @@ public class Registration extends ActionBarActivity {
      * @param view
      */
     public void register(View view) {
-        startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        if (username.getText().toString().equals("admin") &&
+                password.getText().toString().equals("admin") &&
+                email.getText().toString().equals("admin")) {
+            Toast.makeText(getApplicationContext(), "Email or Username already exists",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        }
     }
 
     /**
