@@ -39,7 +39,7 @@ public class Login extends ActionBarActivity {
     /* Login Method
      */
     public void login(View view) {
-        if (username.getText().equals(null) || password.getText().equals(null)) {
+        if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
         } else if(Registration.checkCredentials(username.getText().toString(),

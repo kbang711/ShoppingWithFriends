@@ -34,8 +34,8 @@ public class Registration extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         email = (EditText)findViewById(R.id.editTextEmail);
-        username = (EditText)findViewById(R.id.editText1);
-        password = (EditText)findViewById(R.id.editText2);
+        username = (EditText)findViewById(R.id.editTextUser);
+        password = (EditText)findViewById(R.id.editTextPW);
         password2 = (EditText)findViewById(R.id.editTextPW2);
         register = (Button)findViewById(R.id.buttonRegister);
         cancel = (Button)findViewById(R.id.cancel);
@@ -46,8 +46,9 @@ public class Registration extends ActionBarActivity {
      * @param view
      */
     public void register(View view) {
-        if (username.getText().equals(null) || email.getText().equals(null) ||
-                password.getText().equals(null) || password2.getText().equals(null)) {
+        if (username.getText().toString().equals("") || email.getText().toString().equals("") ||
+                password.getText().toString().equals("") ||
+                password2.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in each field",
                     Toast.LENGTH_SHORT).show();
         } else if (checkEmailUser(email.getText().toString(), username.getText().toString())) {

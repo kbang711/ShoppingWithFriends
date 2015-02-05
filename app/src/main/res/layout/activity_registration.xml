@@ -35,10 +35,8 @@
         android:layout_alignBottom="@+id/textViewEmail"
         android:layout_marginLeft="38dp"
         android:layout_toRightOf="@+id/textViewEmail"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
+        android:ems="10"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:id="@+id/textViewUser"
@@ -56,7 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewUser"
         android:layout_toRightOf="@+id/textViewUser"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="text"/>
 
     <TextView
         android:id="@+id/textViewPW"
@@ -74,7 +73,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewPW"
         android:layout_toRightOf="@+id/textViewPW"
-        android:ems="10"/>
+        android:ems="10"
+        android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/textViewPW2"
@@ -92,7 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewPW2"
         android:layout_toRightOf="@+id/textViewPW2"
-        android:ems="10"/>
+        android:ems="10"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/buttonRegister"
