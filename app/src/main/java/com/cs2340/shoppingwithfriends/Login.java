@@ -39,8 +39,11 @@ public class Login extends ActionBarActivity {
     /* Login Method
      */
     public void login(View view) {
-        if(username.getText().toString().equals("admin") &&
-                password.getText().toString().equals("admin")) {
+        if (username.getText().equals(null) || password.getText().equals(null)) {
+            Toast.makeText(getApplicationContext(), "Please fill in all fields",
+                    Toast.LENGTH_SHORT).show();
+        } else if(Registration.checkCredentials(username.getText().toString(),
+                password.getText().toString())) {
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
         } else {
             Toast.makeText(getApplicationContext(), "Wrong Credentials",
