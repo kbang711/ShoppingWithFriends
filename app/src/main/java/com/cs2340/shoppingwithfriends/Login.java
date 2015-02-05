@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
+/**
+ * Class that does the Login Page.
+ */
 public class Login extends ActionBarActivity {
 
     /* Added variables - Kevin Bang*/
@@ -36,7 +39,11 @@ public class Login extends ActionBarActivity {
         cancel = (Button)findViewById(R.id.cancel);
     }
 
-    /* Login Method
+    /**
+     * Logins the User.
+     * Checks to make sure all fields are filled, Username and Password are a match, and tells
+     * the user if the username and password aren't a match.
+     * @param view
      */
     public void login(View view) {
         if (username.getText().toString().equals("") || password.getText().toString().equals("")) {

@@ -17,6 +17,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 /**
+ * Class that does the Registration page.
  * Created by Kevin Bang on 1/30/2015.
  */
 public class Registration extends ActionBarActivity {
@@ -42,7 +43,9 @@ public class Registration extends ActionBarActivity {
     }
 
     /**
-     * Registers the user
+     * Registers the user.
+     * Checks to make sure each field is filled, the
+     * username or email doesn't already exist, and if the passwords don't match.
      * @param view
      */
     public void register(View view) {
@@ -64,10 +67,20 @@ public class Registration extends ActionBarActivity {
         }
     }
 
+    /**
+     * Gets the list of registered users
+     * @return List of registered users
+     */
     public static ArrayList<Person> getList() {
         return person;
     }
 
+    /**
+     * Checks for existing email or username in the list.
+     * @param email Email being checked for
+     * @param username Username being checked for
+     * @return True if Username or Email already exists in the list.
+     */
     public static boolean checkEmailUser(String email, String username) {
         boolean done = false;
         for (int i = 0; i < person.size(); i++) {
@@ -82,6 +95,12 @@ public class Registration extends ActionBarActivity {
         return done;
     }
 
+    /**
+     * Checks the username and password to make sure both are connected.
+     * @param username Username being checked for
+     * @param password Password being checked for
+     * @return True if Username and Password are a match
+     */
     public static boolean checkCredentials(String username, String password) {
         boolean done = false;
         for (int i = 0; i < person.size(); i++) {
