@@ -34,7 +34,7 @@ public class Registration extends ActionBarActivity {
         username = (EditText)findViewById(R.id.editText1);
         password = (EditText)findViewById(R.id.editText2);
         password2 = (EditText)findViewById(R.id.editTextPW2);
-        register = (Button)findViewById(R.id.button1);
+        register = (Button)findViewById(R.id.buttonRegister);
         cancel = (Button)findViewById(R.id.cancel);
     }
 
@@ -43,13 +43,19 @@ public class Registration extends ActionBarActivity {
      * @param view
      */
     public void register(View view) {
-        if (username.getText().toString().equals("admin") &&
-                password.getText().toString().equals("admin") &&
+        if (username.getText().equals(null) || email.getText().equals(null) ||
+                password.getText().equals(null) || password2.getText().equals(null)) {
+            Toast.makeText(getApplicationContext(), "Please fill in each field.",
+                    Toast.LENGTH_SHORT).show();
+        } else if (username.getText().toString().equals("admin") ||
                 email.getText().toString().equals("admin")) {
             Toast.makeText(getApplicationContext(), "Email or Username already exists",
                     Toast.LENGTH_SHORT).show();
+        } else if (!password.getText().toString().equals(password2.getText().toString())) {
+            Toast.makeText(getApplicationContext(), "Passwords do not match",
+                    Toast.LENGTH_SHORT).show();
         } else {
-            startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            startActivity(new Intent(getApplicationContext(), Login.class));
         }
     }
 
