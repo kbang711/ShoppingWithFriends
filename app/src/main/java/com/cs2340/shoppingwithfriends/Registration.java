@@ -60,6 +60,10 @@ public class Registration extends ActionBarActivity {
         } else if (!password.getText().toString().equals(password2.getText().toString())) {
             Toast.makeText(getApplicationContext(), "Passwords do not match",
                     Toast.LENGTH_SHORT).show();
+        } else if (!isValidEmailAddress(email.getText().toString())) {
+            Toast.makeText(getApplicationContext(), "invalid email address",
+                    Toast.LENGTH_SHORT).show();
+            email.setText("");
         } else {
             person.add(new Person(email.getText().toString(), username.getText().toString(),
                     password.getText().toString()));
@@ -94,6 +98,13 @@ public class Registration extends ActionBarActivity {
         }
         return done;
     }
+
+   public boolean isValidEmailAddress(String email) {
+       java.util.regex.Pattern p =  java.util.regex.Pattern
+               .compile("[A-Za-z0-9._\\%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+       java.util.regex.Matcher m = p.matcher(email);
+       return m.matches();
+   }
 
     /**
      * Checks the username and password to make sure both are connected.
