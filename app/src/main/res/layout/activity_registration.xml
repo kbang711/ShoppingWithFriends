@@ -99,11 +99,11 @@
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewPW2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
         android:onClick="register"
-        android:text="@string/Register" />
+        android:text="@string/Register"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
