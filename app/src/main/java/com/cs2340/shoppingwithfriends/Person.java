@@ -6,7 +6,7 @@ package com.cs2340.shoppingwithfriends;
  * Created by Kevin Bang on 2/5/2015.
  */
 public class Person {
-    private String email, username, password;
+    private String name, email, username, password;
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -14,7 +14,8 @@ public class Person {
      * @param username Username of the person
      * @param password Password of the person
      */
-    public Person(String email, String username, String password) {
+    public Person(String name, String email, String username, String password) {
+        this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
@@ -43,4 +44,10 @@ public class Person {
     public String getPassword() {
         return this.password;
     }
+
+    /**
+     * Gets the name of the Person
+     * @return Name of the Person
+     */
+    public String getName() { return this.name; }
 }

@@ -67,8 +67,8 @@ public class Registration extends ActionBarActivity {
                     Toast.LENGTH_SHORT).show();
             email.setText("");
         } else {
-            person.add(new Person(email.getText().toString(), username.getText().toString(),
-                    password.getText().toString()));
+            person.add(new Person(name.getText().toString(), email.getText().toString(),
+                    username.getText().toString(), password.getText().toString()));
             startActivity(new Intent(getApplicationContext(), Login.class));
         }
     }
