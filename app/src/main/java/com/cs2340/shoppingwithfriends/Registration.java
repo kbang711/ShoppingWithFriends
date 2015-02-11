@@ -56,16 +56,26 @@ public class Registration extends ActionBarActivity {
                 password2.getText().toString().equals("") || name.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in each field",
                     Toast.LENGTH_SHORT).show();
+        } else if (!isValidEmailAddress(email)) {
+            Toast.makeText(getApplicationContext(), "Invalid email address",
+                    Toast.LENGTH_SHORT).show();
+        } else if (!testUsername(username)) {
+            Toast.makeText(getApplicationContext(), "Invalid username",
+                    Toast.LENGTH_SHORT).show();
+        } else if (!testPassword(password)) {
+            Toast.makeText(getApplicationContext(), "Invalid password",
+                    Toast.LENGTH_SHORT).show();
+            password.setText("");
+        } else if (!testName(name)) {
+            Toast.makeText(getApplicationContext(), "Invalid name",
+                    Toast.LENGTH_SHORT).show();
         } else if (checkEmailUser(email.getText().toString(), username.getText().toString())) {
             Toast.makeText(getApplicationContext(), "Email or Username already exists",
                     Toast.LENGTH_SHORT).show();
         } else if (!password.getText().toString().equals(password2.getText().toString())) {
             Toast.makeText(getApplicationContext(), "Passwords do not match",
                     Toast.LENGTH_SHORT).show();
-        } else if (!isValidEmailAddress(email.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "invalid email address",
-                    Toast.LENGTH_SHORT).show();
-            email.setText("");
+            password2.setText("");
         } else {
             person.add(new Person(name.getText().toString(), email.getText().toString(),
                     username.getText().toString(), password.getText().toString()));
@@ -101,12 +111,21 @@ public class Registration extends ActionBarActivity {
         return done;
     }
 
-   public boolean isValidEmailAddress(String email) {
-       java.util.regex.Pattern p =  java.util.regex.Pattern
-               .compile("[A-Za-z0-9._\\%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
-       java.util.regex.Matcher m = p.matcher(email);
-       return m.matches();
-   }
+    public boolean isValidEmailAddress(EditText s) {
+       return s.getText().toString().matches("[A-Za-z0-9._\\%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+    }
+
+    public boolean testPassword(EditText s) {
+        return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
+    }
+
+    public boolean testUsername(EditText s) {
+        return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
+    }
+
+    public boolean testName(EditText s) {
+        return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
+    }
 
     /**
      * Checks the username and password to make sure both are connected.
