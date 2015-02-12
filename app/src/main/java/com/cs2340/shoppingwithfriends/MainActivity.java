@@ -18,21 +18,24 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Adding username, pw, and attempts
-        login = (Button)findViewById(R.id.button1);
-        initRegister = (Button)findViewById(R.id.button_initialRegister);
-    }
+        Button login = (Button)findViewById(R.id.button1);
+        Button initRegister = (Button)findViewById(R.id.button_initialRegister);
 
-    /**
-     * Method for when initial Registration button is clicked
-     */
-    public void initRegisterClick(View view) {
-        startActivity(new Intent(getApplicationContext(), Registration.class));
-    }
+        login.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(new Intent(MainActivity.this,Login.class));
+                    }
+                }
+        );
 
-    /* Login Method
-     */
-    public void login(View view) {
-        startActivity(new Intent(getApplicationContext(), Login.class));
+        initRegister.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(new Intent(MainActivity.this,Registration.class));
+                    }
+                }
+        );
     }
 
     @Override
