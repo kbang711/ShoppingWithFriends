@@ -40,8 +40,16 @@ public class Registration extends ActionBarActivity {
         username = (EditText)findViewById(R.id.editTextUser);
         password = (EditText)findViewById(R.id.editTextPW);
         password2 = (EditText)findViewById(R.id.editTextPW2);
-        register = (Button)findViewById(R.id.buttonRegister);
-        cancel = (Button)findViewById(R.id.cancel);
+        Button register = (Button)findViewById(R.id.buttonRegister);
+        Button cancel = (Button)findViewById(R.id.cancel);
+
+        cancel.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(new Intent(Registration.this,MainActivity.class));
+                    }
+                }
+        );
     }
 
     /**

@@ -35,8 +35,16 @@ public class Login extends ActionBarActivity {
         password = (EditText)findViewById(R.id.editText2);
         attempts = (TextView)findViewById(R.id.textView5);
         attempts.setText(Integer.toString(counter));
-        login = (Button)findViewById(R.id.button1);
-        cancel = (Button)findViewById(R.id.cancel);
+        Button login = (Button)findViewById(R.id.button1);
+        Button cancel = (Button)findViewById(R.id.cancel);
+
+        cancel.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(new Intent(Login.this,MainActivity.class));
+                    }
+                }
+        );
     }
 
     /**
@@ -62,15 +70,6 @@ public class Login extends ActionBarActivity {
                 login.setEnabled(false);
             }
         }
-    }
-
-    /**
-     * Cancel method to go back to main screen
-     * @param view
-     * @return
-     */
-    public void cancel(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
     @Override
