@@ -13,5 +13,7 @@
     <string name="Registration">Registration</string>
     <string name="attempts">Attempts Left:</string>
     <string name="cancel">Cancel</string>
+    <string name="addfriend__button_text">Add Friend</string>
+    <string name="mainscreen_friend_button">Friends</string>
 
 </resources>

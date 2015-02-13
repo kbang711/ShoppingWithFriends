@@ -25,6 +25,15 @@ public class MainScreen extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainscreen);
+
+        Button gotoFriends = (Button)findViewById(R.id.mainscreen_friend_button);
+        gotoFriends.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(new Intent(MainScreen.this,Friends.class));
+                    }
+                }
+        );
     }
 
     @Override
