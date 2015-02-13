@@ -54,7 +54,7 @@ public class Login extends ActionBarActivity {
      * @param view
      */
     public void login(View view) {
-        startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        startActivity(new Intent(Login.this, MainScreen.class));
 //        if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
 //            Toast.makeText(getApplicationContext(), "Please fill in all fields",
 //                    Toast.LENGTH_SHORT).show();

@@ -35,20 +35,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Registration"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.Registration" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".MainScreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MainScreen" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Friends"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.Friends" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -21,12 +21,6 @@ public class Friends extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
-
-        String[] friends = {"Snoop Dogg", "2 Chainz", "Barack Obama", "Monica Sweat"};
-        ArrayAdapter<String> friendAdapter = new ArrayAdapter<String>(this, R.layout.activity_friends, friends);
-        ListView list = (ListView)findViewById(R.id.friend_list);
-        list.setAdapter(friendAdapter);
-
     }
 
     @Override
