@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class AddFriend extends ActionBarActivity {
     private EditText username = null;
@@ -25,24 +27,46 @@ public class AddFriend extends ActionBarActivity {
 
     public void addFriend(View view) {
         boolean exists = false;
-        for (int i = 0; i < Registration.person.size(); i++) {
-            if (Registration.person.get(i).getEmail().
-                    compareToIgnoreCase(email.getText().toString()) == 0) {
-                if (Registration.person.get(i).getName().
-                        compareToIgnoreCase(username.getText().toString()) == 0) {
-                    Person.addFriend(username.getText().toString(), "");
-                    exists = true;
+
+        if (checkifFriend(username.getText().toString())){
+            startActivity(new Intent(getApplicationContext(), Friends.class));
+            Toast.makeText(getApplicationContext(), "Friend Already Added", Toast.LENGTH_SHORT).show();
+        } else {
+
+            for (int i = 0; i < Registration.person.size(); i++) {
+                if (Registration.person.get(i).getEmail().
+                        compareToIgnoreCase(email.getText().toString()) == 0) {
+                    if (Registration.person.get(i).getName().
+                            compareToIgnoreCase(username.getText().toString()) == 0) {
+                        Person.addFriend(username.getText().toString(), "");
+                        exists = true;
+                    }
                 }
             }
-        }
-        if (!exists) {
-            Toast.makeText(getApplicationContext(), "Friend Not Found", Toast.LENGTH_SHORT).show();
-        } else {
-            startActivity(new Intent(getApplicationContext(), Friends.class));
-            Toast.makeText(getApplicationContext(), "Friend Added", Toast.LENGTH_SHORT).show();
+            if (!exists) {
+                Toast.makeText(getApplicationContext(), "Friend Not Found", Toast.LENGTH_SHORT).show();
+            } else {
+                startActivity(new Intent(getApplicationContext(), Friends.class));
+                Toast.makeText(getApplicationContext(), "Friend Added", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
+    private boolean checkifFriend(String name){
+        ArrayList<String> nameArr = new ArrayList<String>();
+        for (FriendsListObj item : Person.friends){
+            nameArr.add(item.getName());
+        }
+
+
+        boolean isFriend = false;
+        for(String item : nameArr){
+            if (name.compareToIgnoreCase(item) == 0){
+                isFriend = true;
+            }
+        }
+        return isFriend;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
