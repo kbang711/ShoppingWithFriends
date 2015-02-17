@@ -15,5 +15,6 @@
     <string name="cancel">Cancel</string>
     <string name="addfriend__button_text">Add Friend</string>
     <string name="mainscreen_friend_button">Friends</string>
+    <string name="friend_title">Friends</string>
 
 </resources>
