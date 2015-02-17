@@ -43,7 +43,6 @@ public class Friends extends Activity{
                 other[i] = Person.friends.get(i).getOther();
             }
         }
-
         for (int i = 0; i < name.length; i++){
             friendListPeople.add(new FriendsListObj(name[i], other[i]));
         }
