@@ -8,15 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // We can create custom adapters
-class FriendsAdapter extends ArrayAdapter<String> {
+class FriendsAdapter extends ArrayAdapter<FriendsListObj> {
 
-    public FriendsAdapter(Context context, String[] names){
+    public FriendsAdapter(Context context, List<FriendsListObj> fList){
 
-        super(context, R.layout.friends_list_layout, names);
+        super(context, R.layout.friends_list_layout, fList);
 
     }
-
     // Override getView which is responsible for creating the rows for our list
     // position represents the index we are in for the array.
 
@@ -36,13 +38,15 @@ class FriendsAdapter extends ArrayAdapter<String> {
         View theView = theInflater.inflate(R.layout.friends_list_layout, parent, false);
 
         // We retrieve the text from the array
-        String tvShow = getItem(position);
+        FriendsListObj fPerson = getItem(position);
 
         // Get the TextView we want to edit
-        TextView theTextView = (TextView) theView.findViewById(R.id.friends_list_textview);
+        TextView nameView = (TextView) theView.findViewById(R.id.friends_name_textview);
+        TextView otherView = (TextView) theView.findViewById(R.id.friends_other_textview);
 
         // Put the next TV Show into the TextView
-        theTextView.setText(tvShow);
+        nameView.setText(fPerson.getName());
+        otherView.setText(fPerson.getOther());
 
         return theView;
 

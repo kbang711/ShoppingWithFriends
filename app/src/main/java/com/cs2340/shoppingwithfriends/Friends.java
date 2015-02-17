@@ -13,11 +13,15 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Class that does the main Friends page (has option to go to friends list or add friends)
  * Created by Kevin Bang on 2/10/2015.
  */
 public class Friends extends Activity{
+
+    ArrayList<FriendsListObj> friendListPeople= new ArrayList<FriendsListObj>();
     /**
      * Called when activity is first created
      */
@@ -25,9 +29,17 @@ public class Friends extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
-        String[] friendArr = new String[]{"Obama", "Snoop Dogg", "2 Chainz", "Big Poppy"};
 
-        ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendArr);
+        FriendsListObj friend1 = new FriendsListObj("Barack Obama", "America");
+        FriendsListObj friend2 = new FriendsListObj("Snoop Dogg", "fo shizzle");
+        FriendsListObj friend3 = new FriendsListObj("2 Chainz", "hes got 2 chains");
+
+        friendListPeople.add(friend1);
+        friendListPeople.add(friend2);
+        friendListPeople.add(friend3);
+
+
+        ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendListPeople);
 
         ListView friendListView = (ListView)findViewById(R.id.friendsList);
 
