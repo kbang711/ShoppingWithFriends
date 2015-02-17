@@ -30,8 +30,12 @@ public class Friends extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
 
-        String[] name = {"Barack Obama", "Snoop Dogg", "2 Chainz", "Monica Sweat", "Kim Jong Un", "Stephen Hawking", "Batman"};
-        String[] other = {"Barack Obama", "Snoop Dogg", "2 Chainz", "Monica Sweat", "Kim Jong Un", "Stephen Hawking", "Batman"};
+        String[] name = new String[Person.friends.size()];
+        String[] other = new String[Person.friends.size()];
+        for (int i = 0; i < Person.friends.size(); i++) {
+            name[i] = Person.friends.get(i).getName();
+            other[i] = Person.friends.get(i).getOther();
+        }
 
         for (int i = 0; i < name.length; i++){
             friendListPeople.add(new FriendsListObj(name[i], other[i]));
