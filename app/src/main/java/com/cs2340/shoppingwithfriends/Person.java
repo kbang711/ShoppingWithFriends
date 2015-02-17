@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Person {
     private String name, email, username, password;
-    public static ArrayList<FriendsListObj> friends;
+    public static ArrayList<FriendsListObj> friends = new ArrayList<FriendsListObj>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -21,7 +21,7 @@ public class Person {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.friends = null;
+
     }
 
     /**
