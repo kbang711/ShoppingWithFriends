@@ -3,31 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
+
+    >
 
 
     <TextView
         android:id="@+id/friends_name_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#ff5e08"
-        android:padding="15dp"
+        android:textColor="#ff0079ff"
         android:gravity="center|top"
+        android:paddingBottom="5dp"
+        android:paddingTop="15dp"
+        android:background="#ffd2ecff"
         />
 
     <TextView
         android:id="@+id/friends_other_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/friends_name_textview"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        android:textColor="#ff0079ff"
-        android:padding="15dp"
-        android:gravity="center_horizontal|top|"
-
+        android:textColor="#ff14a5ff"
+        android:paddingBottom="15dp"
+        android:paddingTop="5dp"
+        android:background="#ffd2ecff"
+        android:gravity="center_horizontal"
         />
 
 
