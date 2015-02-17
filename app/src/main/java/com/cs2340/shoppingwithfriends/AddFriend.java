@@ -36,4 +36,8 @@ public class AddFriend extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }
