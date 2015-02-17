@@ -17,14 +17,14 @@
             </intent-filter>
         </activity>
         <activity
-        android:name=".Registration"
-        android:label="@string/app_name" >
-        <intent-filter>
-            <action android:name="android.intent.action.Registration" />
+            android:name=".Registration"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.Registration" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Login"
             android:label="@string/app_name" >
@@ -48,8 +48,21 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.Friends" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".add_friend"
+            android:label="@string/title_activity_add_friend" >
+        </activity>
+        <activity
+            android:name=".Add_Friend"
+            android:label="@string/title_activity_add__friend" >
+        </activity>
+        <activity
+            android:name=".AddFriend"
+            android:label="@string/title_activity_add_friend" >
         </activity>
     </application>
 
