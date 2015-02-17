@@ -42,9 +42,19 @@ public class Friends extends ActionBarActivity{
                }
         );
 
-
-        String[] name = {"Barack Obama", "Snoop Dogg", "2 Chainz", "Monica Sweat", "Kim Jong Un", "Stephen Hawking", "Batman"};
-        String[] other = {"Barack Obama", "Snoop Dogg", "2 Chainz", "Monica Sweat", "Kim Jong Un", "Stephen Hawking", "Batman"};
+        String[] name = new String[1];
+        String[] other = new String[1];
+        if (Person.friends.size() == 0) {
+            name[0] = "";
+            other[0] = "";
+        } else {
+            name = new String[Person.friends.size()];
+            other = new String[Person.friends.size()];
+            for (int i = 0; i < Person.friends.size(); i++) {
+                name[i] = Person.friends.get(i).getName();
+                other[i] = Person.friends.get(i).getOther();
+            }
+        }
 
         for (int i = 0; i < name.length; i++){
             friendListPeople.add(new FriendsListObj(name[i], other[i]));

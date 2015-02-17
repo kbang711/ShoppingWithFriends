@@ -1,4 +1,5 @@
 package com.cs2340.shoppingwithfriends;
+import java.util.ArrayList;
 
 /**
  * Basic Class that helps store and get the email, username,
@@ -7,6 +8,7 @@ package com.cs2340.shoppingwithfriends;
  */
 public class Person {
     private String name, email, username, password;
+    public static ArrayList<FriendsListObj> friends = new ArrayList<FriendsListObj>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -19,6 +21,7 @@ public class Person {
         this.email = email;
         this.username = username;
         this.password = password;
+
     }
 
     /**
@@ -50,4 +53,8 @@ public class Person {
      * @return Name of the Person
      */
     public String getName() { return this.name; }
+
+    public static void addFriend(String name, String other) {
+        friends.add(new FriendsListObj(name, other));
+    }
 }
