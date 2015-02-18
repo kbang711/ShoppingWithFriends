@@ -64,9 +64,7 @@ public class Friends extends ActionBarActivity{
         }
 
         ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendsList);
-
         ListView friendListView = (ListView)findViewById(R.id.friendsList);
-
         friendListView.setAdapter(arrFriendAdapter);
 
     }

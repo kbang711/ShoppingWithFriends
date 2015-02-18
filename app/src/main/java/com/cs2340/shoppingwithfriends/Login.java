@@ -54,23 +54,23 @@ public class Login extends ActionBarActivity {
      * @param view
      */
     public void login(View view) {
-        startActivity(new Intent(Login.this, MainScreen.class));
-//        if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
-//            Toast.makeText(getApplicationContext(), "Please fill in all fields",
-//                    Toast.LENGTH_SHORT).show();
-//        } else if(Registration.checkCredentials(username.getText().toString(),
-//                password.getText().toString())) {
-//            startActivity(new Intent(getApplicationContext(), MainScreen.class));
-//        } else {
-//            Toast.makeText(getApplicationContext(), "Wrong Credentials",
-//                    Toast.LENGTH_SHORT).show();
-//            attempts.setBackgroundColor(Color.RED);
-//            counter--;
-//            attempts.setText(Integer.toString(counter));
-//            if(counter == 0) {
-//                login.setEnabled(false);
-//            }
-//        }
+//        startActivity(new Intent(Login.this, MainScreen.class));
+        if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Please fill in all fields",
+                    Toast.LENGTH_SHORT).show();
+        } else if(Registration.checkCredentials(username.getText().toString(),
+                password.getText().toString())) {
+            startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        } else {
+            Toast.makeText(getApplicationContext(), "Wrong Credentials",
+                    Toast.LENGTH_SHORT).show();
+            attempts.setBackgroundColor(Color.RED);
+            counter--;
+            attempts.setText(Integer.toString(counter));
+            if(counter == 0) {
+                login.setEnabled(false);
+            }
+        }
     }
 
     @Override
