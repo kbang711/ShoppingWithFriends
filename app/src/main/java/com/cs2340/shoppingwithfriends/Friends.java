@@ -23,10 +23,11 @@ import java.util.ArrayList;
  */
 public class Friends extends ActionBarActivity{
 
-    ArrayList<FriendsListObj> friendListPeople= new ArrayList<FriendsListObj>();
     /**
      * Called when activity is first created
      */
+    ArrayList<Person> friendsList = new ArrayList<Person>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,24 +43,27 @@ public class Friends extends ActionBarActivity{
                }
         );
 
-        String[] name = new String[1];
-        String[] other = new String[1];
+        String[] friendName = new String[1];
+        String[] friendEmail = new String[1];
+        String[] friendUsername = new String[1];
         if (Person.friends.size() == 0) {
-            name[0] = "";
-            other[0] = "";
+            friendName[0] = "No Friends";
+            friendEmail[0] = "";
+            friendUsername[0] = "";
         } else {
-            name = new String[Person.friends.size()];
-            other = new String[Person.friends.size()];
+            friendName = new String[Person.friends.size()];
+            friendEmail = new String[Person.friends.size()];
             for (int i = 0; i < Person.friends.size(); i++) {
-                name[i] = Person.friends.get(i).getName();
-                other[i] = Person.friends.get(i).getOther();
+                friendName[i] = Person.friends.get(i).getName();
+                friendEmail[i] = Person.friends.get(i).getEmail();
+                friendUsername[i] = Person.friends.get(i).getUsername();
             }
         }
-        for (int i = 0; i < name.length; i++){
-            friendListPeople.add(new FriendsListObj(name[i], other[i]));
+        for (int i = 0; i < friendName.length; i++){
+            friendsList.add(new Person(friendName[i], friendEmail[i], friendUsername[i], ""));
         }
 
-        ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendListPeople);
+        ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendsList);
 
         ListView friendListView = (ListView)findViewById(R.id.friendsList);
 

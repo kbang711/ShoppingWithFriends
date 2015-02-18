@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 // We can create custom adapters
-class FriendsAdapter extends ArrayAdapter<FriendsListObj> {
+class FriendsAdapter extends ArrayAdapter<Person> {
 
-    public FriendsAdapter(Context context, List<FriendsListObj> fList){
+    public FriendsAdapter(Context context, List<Person> fList){
 
         super(context, R.layout.friends_list_layout, fList);
 
@@ -38,7 +38,7 @@ class FriendsAdapter extends ArrayAdapter<FriendsListObj> {
         View theView = theInflater.inflate(R.layout.friends_list_layout, parent, false);
 
         // We retrieve the text from the array
-        FriendsListObj fPerson = getItem(position);
+        Person fPerson = getItem(position);
 
         // Get the TextView we want to edit
         TextView nameView = (TextView) theView.findViewById(R.id.friends_name_textview);
@@ -46,7 +46,7 @@ class FriendsAdapter extends ArrayAdapter<FriendsListObj> {
 
         // Put the next TV Show into the TextView
         nameView.setText(fPerson.getName());
-        otherView.setText(fPerson.getOther());
+        otherView.setText(fPerson.getUsername());
 
         return theView;
 

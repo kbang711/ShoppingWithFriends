@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Person {
     private String name, email, username, password;
-    public static ArrayList<FriendsListObj> friends = new ArrayList<FriendsListObj>();
+    public static ArrayList<Person> friends = new ArrayList<Person>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -54,7 +54,7 @@ public class Person {
      */
     public String getName() { return this.name; }
 
-    public static void addFriend(String name, String other) {
-        friends.add(new FriendsListObj(name, other));
+    public static void addFriend(String name, String email, String username) {
+        friends.add(new Person(name, email, username, ""));
     }
 }
