@@ -45,8 +45,8 @@ class FriendsAdapter extends ArrayAdapter<Person> {
         TextView otherView = (TextView) theView.findViewById(R.id.friends_other_textview);
 
         // Put the next TV Show into the TextView
-        nameView.setText(fPerson.getName());
-        otherView.setText(fPerson.getUsername());
+        nameView.setText(fPerson.getName() + " " + fPerson.getUsername());
+        otherView.setText(fPerson.getEmail());
 
         return theView;
 

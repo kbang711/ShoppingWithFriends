@@ -20,7 +20,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_add__friend">Add_Friend</string>
     <string name="add_friend_title">Add Friend</string>
-    <string name="add_friend_input_title">Enter Friend\'s Username</string>
+    <string name="add_friend_input_title">Enter Friend\'s Name</string>
     <string name="add_friend_email_title">Enter Friend\'s Email</string>
     <string name="add_friend_button">Add Friend</string>
 

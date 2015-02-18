@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 public class AddFriend extends ActionBarActivity {
-    private EditText username = null;
+    private EditText name = null;
     private EditText email = null;
 
     @Override
@@ -21,14 +21,14 @@ public class AddFriend extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_friend);
 
-        username = (EditText)findViewById(R.id.add_friend_username);
+        name = (EditText)findViewById(R.id.add_friend_username);
         email = (EditText)findViewById(R.id.add_friend_email);
     }
 
     public void addFriend(View view) {
         boolean exists = false;
 
-        if (checkifFriend(username.getText().toString())){
+        if (checkifFriend(name.getText().toString())){
             startActivity(new Intent(getApplicationContext(), Friends.class));
             Toast.makeText(getApplicationContext(), "Friend Already Added", Toast.LENGTH_SHORT).show();
         } else {
@@ -37,8 +37,8 @@ public class AddFriend extends ActionBarActivity {
                 if (Registration.person.get(i).getEmail().
                         compareToIgnoreCase(email.getText().toString()) == 0) {
                     if (Registration.person.get(i).getName().
-                            compareToIgnoreCase(username.getText().toString()) == 0) {
-                        Person.addFriend("", username.getText().toString(), email.getText().toString());
+                            compareToIgnoreCase(name.getText().toString()) == 0) {
+                        Person.addFriend(name.getText().toString(), email.getText().toString(), Registration.person.get(i).getUsername());
                         exists = true;
                     }
                 }
