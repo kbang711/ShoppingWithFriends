@@ -25,12 +25,18 @@ public class AddFriend extends ActionBarActivity {
         email = (EditText)findViewById(R.id.add_friend_email);
     }
 
+    /**
+     * Adds friend to person who adds the friend. Since friendship is mutual, both people become
+     * friends
+     * @param view
+     */
     public void addFriend(View view) {
         boolean exists = false;
 
-        if (checkifFriend(name.getText().toString())){
+        if (checkIfFriend(name.getText().toString())){
             startActivity(new Intent(getApplicationContext(), Friends.class));
-            Toast.makeText(getApplicationContext(), "Friend Already Added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Friend Already Added",
+                    Toast.LENGTH_SHORT).show();
         } else {
 
             for (int i = 0; i < Registration.person.size(); i++) {
@@ -38,13 +44,15 @@ public class AddFriend extends ActionBarActivity {
                         compareToIgnoreCase(email.getText().toString()) == 0) {
                     if (Registration.person.get(i).getName().
                             compareToIgnoreCase(name.getText().toString()) == 0) {
-                        Person.addFriend(name.getText().toString(), email.getText().toString(), Registration.person.get(i).getUsername());
+                        Person.addFriend(name.getText().toString(), email.getText().toString(),
+                                Registration.person.get(i).getUsername());
                         exists = true;
                     }
                 }
             }
             if (!exists) {
-                Toast.makeText(getApplicationContext(), "Friend Not Found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Friend Not Found",
+                        Toast.LENGTH_SHORT).show();
             } else {
                 startActivity(new Intent(getApplicationContext(), Friends.class));
                 Toast.makeText(getApplicationContext(), "Friend Added", Toast.LENGTH_SHORT).show();
@@ -52,13 +60,17 @@ public class AddFriend extends ActionBarActivity {
         }
     }
 
-    private boolean checkifFriend(String name){
+    /**
+     * Checks if the person is already friends to ensure that you can't add the same friend
+     * twice.
+     * @param name
+     * @return
+     */
+    private boolean checkIfFriend(String name){
         ArrayList<String> nameArr = new ArrayList<String>();
         for (Person item : Person.friends){
             nameArr.add(item.getName());
         }
-
-
         boolean isFriend = false;
         for(String item : nameArr){
             if (name.compareToIgnoreCase(item) == 0){
@@ -89,8 +101,4 @@ public class AddFriend extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
 }

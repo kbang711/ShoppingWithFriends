@@ -54,6 +54,12 @@ public class Person {
      */
     public String getName() { return this.name; }
 
+    /**
+     * Adds friend into the ArrayList for the person
+     * @param name Name of the friend
+     * @param email Email of the friend
+     * @param username Username of the friend
+     */
     public static void addFriend(String name, String email, String username) {
         friends.add(new Person(name, email, username, ""));
     }
