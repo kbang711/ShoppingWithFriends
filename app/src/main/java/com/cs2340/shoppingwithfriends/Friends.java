@@ -68,13 +68,9 @@ public class Friends extends ActionBarActivity {
         friendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), FriendDetail.class));
             }
         });
-    }
-
-    public void detailView(View view) {
-        startActivity(new Intent(getApplicationContext(), Login.class));
     }
 
     @Override

@@ -23,5 +23,6 @@
     <string name="add_friend_input_title">Enter Friend\'s Name</string>
     <string name="add_friend_email_title">Enter Friend\'s Email</string>
     <string name="add_friend_button">Add Friend</string>
+    <string name="friend_detail">Friend Details</string>
 
 </resources>
