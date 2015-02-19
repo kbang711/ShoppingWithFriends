@@ -22,12 +22,11 @@ import java.util.ArrayList;
  * Created by Kevin Bang on 2/10/2015.
  */
 public class Friends extends ActionBarActivity{
+    ArrayList<Person> friendsList = new ArrayList<Person>();
 
     /**
      * Called when activity is first created
      */
-    ArrayList<Person> friendsList = new ArrayList<Person>();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
