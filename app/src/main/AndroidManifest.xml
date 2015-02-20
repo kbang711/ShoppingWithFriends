@@ -64,6 +64,14 @@
             android:name=".AddFriend"
             android:label="@string/title_activity_add_friend" >
         </activity>
+        <activity
+            android:name=".FriendDetail"
+            android:label="@string/friend_detail" >
+            <intent-filter>
+                <action android:name="android.intent.action.FriendDetail"/>
+                <category android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>
