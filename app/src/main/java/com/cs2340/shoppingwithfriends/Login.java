@@ -35,7 +35,7 @@ public class Login extends ActionBarActivity {
         password = (EditText)findViewById(R.id.editText2);
         attempts = (TextView)findViewById(R.id.textView5);
         attempts.setText(Integer.toString(counter));
-        Button login = (Button)findViewById(R.id.button1);
+        login(findViewById(R.id.button1));
         Button cancel = (Button)findViewById(R.id.cancel);
 
         cancel.setOnClickListener(
@@ -55,6 +55,7 @@ public class Login extends ActionBarActivity {
      */
     public void login(View view) {
 //        startActivity(new Intent(Login.this, MainScreen.class));
+        Button login = (Button)findViewById(R.id.button1);
         if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
@@ -68,6 +69,8 @@ public class Login extends ActionBarActivity {
             counter--;
             attempts.setText(Integer.toString(counter));
             if(counter == 0) {
+                Toast.makeText(getApplicationContext(), "0 Attempts left",
+                        Toast.LENGTH_SHORT).show();
                 login.setEnabled(false);
             }
         }
