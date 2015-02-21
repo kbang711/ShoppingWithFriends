@@ -23,6 +23,7 @@ import java.util.ArrayList;
  */
 public class Friends extends ActionBarActivity {
     ArrayList<Person> friendsList = new ArrayList<Person>();
+    static int personClicked;
 
     /**
      * Called when activity is first created
@@ -68,7 +69,13 @@ public class Friends extends ActionBarActivity {
         friendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(Friends.this, FriendDetail.class));
+                if (Person.friends.size() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Add a Friend First",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    personClicked = position;
+                    startActivity(new Intent(Friends.this, FriendDetail.class));
+                }
             }
         });
     }
