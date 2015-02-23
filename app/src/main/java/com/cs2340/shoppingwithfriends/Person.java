@@ -8,6 +8,8 @@ import java.util.ArrayList;
  */
 public class Person {
     private String name, email, username, password;
+    private static int rating = 0;
+    private static int sales = 0;
     public static ArrayList<Person> friends = new ArrayList<Person>();
 
     /**
@@ -21,7 +23,8 @@ public class Person {
         this.email = email;
         this.username = username;
         this.password = password;
-
+        this.rating = 0;
+        this.sales = 0;
     }
 
     /**
@@ -62,5 +65,13 @@ public class Person {
      */
     public static void addFriend(String name, String email, String username) {
         friends.add(new Person(name, email, username, ""));
+    }
+
+    public static void setRating(int rate) {
+        rating = rate;
+    }
+
+    public static void setSales(int sale) {
+        sales = sale;
     }
 }

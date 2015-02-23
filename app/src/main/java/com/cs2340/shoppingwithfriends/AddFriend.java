@@ -38,7 +38,6 @@ public class AddFriend extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Friend Already Added",
                     Toast.LENGTH_SHORT).show();
         } else {
-
             for (int i = 0; i < Registration.person.size(); i++) {
                 if (Registration.person.get(i).getEmail().
                         compareToIgnoreCase(email.getText().toString()) == 0) {
@@ -47,6 +46,8 @@ public class AddFriend extends ActionBarActivity {
                         Person.addFriend(name.getText().toString(), email.getText().toString(),
                                 Registration.person.get(i).getUsername());
                         exists = true;
+                        //Make the Friend you just added add you into their friends list
+                        //Registration.person.get(i).addFriend();
                     }
                 }
             }

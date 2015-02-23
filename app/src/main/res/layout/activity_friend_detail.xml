@@ -65,7 +65,7 @@
         android:layout_marginTop="38dp"
         android:text="Rating:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
+<!--
     <TextView
         android:id="@+id/textViewRatingInput"
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         android:layout_marginLeft="20dp"
         android:text="rating"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
-
+-->
     <TextView
         android:id="@+id/textViewNumberOfSales"
         android:layout_width="wrap_content"
@@ -115,5 +115,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:onClick="back"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_alignTop="@+id/textViewRating"
+        android:layout_toEndOf="@+id/textViewNumberOfSales" />
 
 </RelativeLayout>
