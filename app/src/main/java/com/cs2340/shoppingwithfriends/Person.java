@@ -71,7 +71,11 @@ public class Person {
         rating = rate;
     }
 
+    public static int getRating() {return rating;}
+
     public static void setSales(int sale) {
         sales = sale;
     }
+
+    public static int getSales() {return sales;}
 }
