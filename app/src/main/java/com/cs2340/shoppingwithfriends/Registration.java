@@ -132,7 +132,7 @@ public class Registration extends ActionBarActivity {
     }
 
     public boolean testName(EditText s) {
-        return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
+        return s.getText().toString().matches("^([a-zA-Z'-]+\\s+){1,4}[a-zA-z'-]+$");
     }
 
     /**

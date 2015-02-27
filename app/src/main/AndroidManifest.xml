@@ -53,17 +53,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add_friend"
-            android:label="@string/title_activity_add_friend" >
-        </activity>
-        <activity
-            android:name=".Add_Friend"
-            android:label="@string/title_activity_add__friend" >
-        </activity>
-        <activity
             android:name=".AddFriend"
             android:label="@string/title_activity_add_friend" >
         </activity>
+        <activity
+            android:name=".FriendDetail"
+            android:label="@string/friend_detail" >
+            <intent-filter>
+                <action android:name="android.intent.action.FriendDetail"/>
+                <category android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>

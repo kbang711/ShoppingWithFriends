@@ -17,13 +17,13 @@ import java.util.ArrayList;
  * Class that does the main Friends page (has option to go to friends list or add friends)
  * Created by Kevin Bang on 2/10/2015.
  */
-public class Friends extends ActionBarActivity{
+public class Friends extends ActionBarActivity {
+    ArrayList<Person> friendsList = new ArrayList<Person>();
+    static int personClicked;
 
     /**
      * Called when activity is first created
      */
-    ArrayList<Person> friendsList = new ArrayList<Person>();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +62,18 @@ public class Friends extends ActionBarActivity{
         ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendsList);
         ListView friendListView = (ListView)findViewById(R.id.friendsList);
         friendListView.setAdapter(arrFriendAdapter);
-
+        friendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (Person.friends.size() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Add a Friend First",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    personClicked = position;
+                    startActivity(new Intent(Friends.this, FriendDetail.class));
+                }
+            }
+        });
     }
 
     @Override
