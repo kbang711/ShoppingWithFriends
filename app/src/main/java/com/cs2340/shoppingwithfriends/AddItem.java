@@ -17,6 +17,8 @@ package com.cs2340.shoppingwithfriends;
  * Created by Kevin Bang on 3/4/2015.
  */
 public class AddItem extends ActionBarActivity {
+    private EditText itemName = null;
+    private EditText itemPrice = null;
     /**
      * Called when activity is first created
      */
@@ -24,6 +26,20 @@ public class AddItem extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
+
+        itemName = (EditText)findViewById(R.id.add_item_name);
+        itemPrice = (EditText)findViewById(R.id.add_item_price);
+    }
+
+    public void addItem(View view) {
+        if (itemName.getText().toString().equals("") || itemPrice.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Please fill in all fields",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Person.addItem(itemName.getText().toString(), Double.parseDouble(
+                            itemPrice.getText().toString()));
+            startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        }
     }
 
     @Override

@@ -20,7 +20,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textItemName"
         android:ems="10"
         android:id="@+id/add_item_name"
         android:layout_below="@+id/AddItemTitle"
@@ -39,7 +38,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textItemPrice"
         android:ems="10"
         android:id="@+id/add_item_price"
         android:layout_alignStart="@+id/add_item_price_name"
@@ -67,6 +65,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:onClick="addFriend"
+        android:onClick="addItem"
         />
 </RelativeLayout>

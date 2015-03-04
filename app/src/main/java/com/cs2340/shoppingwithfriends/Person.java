@@ -11,6 +11,7 @@ public class Person {
     private static int rating = 0;
     private static int sales = 0;
     public static ArrayList<Person> friends = new ArrayList<Person>();
+    public static ArrayList<Item> items = new ArrayList<Item>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -65,6 +66,10 @@ public class Person {
      */
     public static void addFriend(String name, String email, String username) {
         friends.add(new Person(name, email, username, ""));
+    }
+
+    public static void addItem(String name, double price) {
+        items.add(new Item(name, price));
     }
 
     public static void setRating(int rate) {
