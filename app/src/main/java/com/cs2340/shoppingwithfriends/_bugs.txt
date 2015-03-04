@@ -1,3 +1,3 @@
 Login - toast "please fill in all fields" appears when opening login page
-Friends List - Person A adds person B as friend. When logging on to person B, should have person A
+Friends List - Person A adds person B as friend. When logged in as person B, should have person A
     as friend but instead has person B as friend
