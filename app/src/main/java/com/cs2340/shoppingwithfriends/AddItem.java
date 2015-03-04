@@ -1,43 +1,29 @@
 package com.cs2340.shoppingwithfriends;
-
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+        import android.os.Bundle;
+        import android.support.v7.app.ActionBarActivity;
+        import android.content.Intent;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.view.Menu;
+        import android.view.MenuItem;
 //Added more imports
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.view.View;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.TextView;
+        import android.widget.Toast;
+        import android.view.View;
 
 /**
- * Created by Kevin Bang on 1/30/2015.
+ * Created by Kevin Bang on 3/4/2015.
  */
-public class MainScreen extends ActionBarActivity {
+public class AddItem extends ActionBarActivity {
     /**
      * Called when activity is first created
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainscreen);
-
-        Button gotoFriends = (Button)findViewById(R.id.mainscreen_friend_button);
-        gotoFriends.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v){
-                        startActivity(new Intent(MainScreen.this,Friends.class));
-                    }
-                }
-        );
-    }
-
-    public void addItem(View view) {
-        startActivity(new Intent(MainScreen.this, AddItem.class));
+        setContentView(R.layout.activity_add_item);
     }
 
     @Override
