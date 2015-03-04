@@ -40,6 +40,8 @@ public class MainScreen extends ActionBarActivity {
         startActivity(new Intent(MainScreen.this, AddItem.class));
     }
 
+    public void items(View view) { startActivity(new Intent(MainScreen.this, AddItem.class)); }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

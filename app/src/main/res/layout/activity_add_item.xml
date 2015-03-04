@@ -12,7 +12,7 @@
         android:id="@+id/AddItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Item"
+        android:text="@string/add_item_title"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Item Name"
+        android:text="@string/add_item_name_title"
         android:id="@+id/add_item_name_title"
         android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true" />
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Add Item Price Threshold"
+        android:text="@string/add_item_price_title"
         android:id="@+id/add_item_price_name"
         android:layout_marginTop="250dp"
 

@@ -64,6 +64,13 @@
                 <category android:name="android.intent.action.DEFAULT" />
             </intent-filter>
             </activity>
+        <activity android:name=".AddItem"
+            android:label="Add Item">
+            <intent-filter>
+                <action android:name="android.intent.action.AddItem"/>
+                <category android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>
