@@ -1,5 +1,6 @@
 package com.cs2340.shoppingwithfriends;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -101,9 +102,11 @@ public class Registration extends ActionBarActivity {
             model.saveJson(file);
             //trying out a way to save instances
             try {
-                ObjectOutputStream fileOut = new ObjectOutputStream(new FileOutputStream("file"));
+                FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
+                ObjectOutputStream fileOut = new ObjectOutputStream(fos);
                 fileOut.writeObject(person);
                 fileOut.close();
+                fos.close();
             } catch (IOException e) {
                 Log.e("TEST FILE", "Failed to create file");
             }

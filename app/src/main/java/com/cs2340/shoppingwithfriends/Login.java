@@ -59,9 +59,11 @@ public class Login extends ActionBarActivity {
 
         //My way to load instances
         try {
-            ObjectInputStream fileIn = new ObjectInputStream(new FileInputStream("file"));
+            FileInputStream fis = getApplicationContext().openFileInput("file");
+            ObjectInputStream fileIn = new ObjectInputStream(fis);
             Registration.person = (ArrayList<Person>) fileIn.readObject();
             fileIn.close();
+            fis.close();
         } catch (FileNotFoundException e) {
             Log.e("TEST FILE", "File not found");
         } catch (IOException e) {
