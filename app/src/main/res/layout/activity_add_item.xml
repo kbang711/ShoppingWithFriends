@@ -24,7 +24,8 @@
         android:id="@+id/add_item_name"
         android:layout_below="@+id/AddItemTitle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="100dp"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,6 +44,7 @@
         android:layout_alignStart="@+id/add_item_price_name"
         android:layout_marginBottom="95dp"
         android:layout_below="@+id/add_item_price_name"
+        android:inputType="numberDecimal"
         />
 
     <TextView
