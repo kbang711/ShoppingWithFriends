@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 //Added more imports
@@ -14,6 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -59,6 +66,8 @@ public class Registration extends ActionBarActivity {
      * @param view
      */
     public void register(View view) {
+        DataHolder model = DataHolder.getInstance();
+
         if (username.getText().toString().equals("") || email.getText().toString().equals("") ||
                 password.getText().toString().equals("") ||
                 password2.getText().toString().equals("") || name.getText().toString().equals("")) {
@@ -88,6 +97,16 @@ public class Registration extends ActionBarActivity {
             person.add(new Person(name.getText().toString(), email.getText().toString(),
                     username.getText().toString(), password.getText().toString()));
             startActivity(new Intent(getApplicationContext(), Login.class));
+            File file = new File(this.getFilesDir(), "data.json");
+            model.saveJson(file);
+            //trying out a way to save instances
+            try {
+                ObjectOutputStream fileOut = new ObjectOutputStream(new FileOutputStream("file"));
+                fileOut.writeObject(person);
+                fileOut.close();
+            } catch (IOException e) {
+                Log.e("TEST FILE", "Failed to create file");
+            }
         }
     }
 

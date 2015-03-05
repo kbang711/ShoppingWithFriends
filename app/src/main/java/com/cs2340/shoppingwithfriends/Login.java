@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 //Added more imports
@@ -13,6 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Class that does the Login Page.
@@ -35,7 +45,8 @@ public class Login extends ActionBarActivity {
         password = (EditText)findViewById(R.id.editText2);
         attempts = (TextView)findViewById(R.id.textView5);
         attempts.setText(Integer.toString(counter));
-        login(findViewById(R.id.button1));
+        //login(findViewById(R.id.button1));
+        Button login = (Button)findViewById(R.id.button1);
         Button cancel = (Button)findViewById(R.id.cancel);
 
         cancel.setOnClickListener(
@@ -45,6 +56,19 @@ public class Login extends ActionBarActivity {
                     }
                 }
         );
+
+        //My way to load instances
+        try {
+            ObjectInputStream fileIn = new ObjectInputStream(new FileInputStream("file"));
+            Registration.person = (ArrayList<Person>) fileIn.readObject();
+            fileIn.close();
+        } catch (FileNotFoundException e) {
+            Log.e("TEST FILE", "File not found");
+        } catch (IOException e) {
+            Log.e("TEST FILE", "IOEXCEPTION");
+        } catch (ClassNotFoundException e) {
+            Log.e("TEST FILE", "Class not found");
+        }
     }
 
     /**
@@ -54,8 +78,11 @@ public class Login extends ActionBarActivity {
      * @param view
      */
     public void login(View view) {
-//        startActivity(new Intent(Login.this, MainScreen.class));
-        Button login = (Button)findViewById(R.id.button1);
+        //startActivity(new Intent(Login.this, MainScreen.class));
+        DataHolder model = DataHolder.getInstance();
+        File file = new File(this.getFilesDir(), "data.json");
+        model.loadJson(file);
+
         if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
@@ -71,7 +98,8 @@ public class Login extends ActionBarActivity {
             if(counter == 0) {
                 Toast.makeText(getApplicationContext(), "0 Attempts left",
                         Toast.LENGTH_SHORT).show();
-                login.setEnabled(false);
+                findViewById(R.id.button1).setEnabled(false);
+                //login.setEnabled(false);
             }
         }
     }

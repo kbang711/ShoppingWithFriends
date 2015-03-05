@@ -1,4 +1,6 @@
 package com.cs2340.shoppingwithfriends;
+import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -6,11 +8,12 @@ import java.util.ArrayList;
  * and password of a user in one object.
  * Created by Kevin Bang on 2/5/2015.
  */
-public class Person {
+public class Person implements Serializable{
     private String name, email, username, password;
     private static int rating = 0;
     private static int sales = 0;
     public static ArrayList<Person> friends = new ArrayList<Person>();
+    public static ArrayList<Item> items = new ArrayList<Item>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -65,6 +68,19 @@ public class Person {
      */
     public static void addFriend(String name, String email, String username) {
         friends.add(new Person(name, email, username, ""));
+    }
+
+    /**public void saveText(PrintWriter writer) {
+        writer.println(name + "\t" + email + "\t" + username + "\t" + password);
+    }
+
+    public static Person parseEntry(String line) {
+        String[] tok = line.split("[\t\n]");
+        return new Person(tok[0], )
+    }**/
+
+    public static void addItem(String name, double price) {
+        items.add(new Item(name, price));
     }
 
     public static void setRating(int rate) {
