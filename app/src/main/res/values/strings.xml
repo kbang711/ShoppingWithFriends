@@ -24,6 +24,7 @@
     <string name="add_friend_email_title">Enter Friend\'s Email</string>
     <string name="add_friend_button">Add Friend</string>
     <string name="friend_detail">Friend Details</string>
+    <string name="friends_page_back">Back</string>
     <string name="add_item_title">Add Item</string>
     <string name="add_item_name_title">Add Item Name</string>
     <string name="add_item_price_title">Add Item Price Threshold</string>
