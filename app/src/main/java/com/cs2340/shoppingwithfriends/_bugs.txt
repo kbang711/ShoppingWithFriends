@@ -1,3 +1,5 @@
 Login - toast "please fill in all fields" appears when opening login page
 Friends List - Person A adds person B as friend. When logged in as person B, should have person A
     as friend but instead has person B as friend
+Friends List - crashes when adding friends greater than the number of friends in database
+Attempts left - resets to 3 if you leave the page

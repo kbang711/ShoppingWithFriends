@@ -78,6 +78,11 @@ public class Friends extends ActionBarActivity {
         });
     }
 
+
+    public void back(View view) {
+        startActivity(new Intent(getApplicationContext(), MainScreen.class));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
