@@ -11,6 +11,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by Kevin Bang on 3/9/2015.
  */
@@ -20,17 +22,24 @@ public class ItemList_Personal extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist_personal);
+        ArrayList<Item> itemList = new ArrayList<Item>();
 
         String[] itemName = new String[1];
+        double[] itemPrice = new double[1];
         if (Person.items.size() == 0) {
             itemName[0] = "No Items Added";
         } else {
             itemName = new String[Person.items.size()];
+            itemPrice = new double[Person.items.size()];
             for (int i = 0; i < Person.items.size(); i++) {
                 itemName[i] = Person.items.get(i).getItemName();
+                itemPrice[i] = Person.items.get(i).getItemPrice();
             }
         }
-        ListAdapter arrItemAdapter = new ItemAdapter(this, Person.items);
+        for (int i = 0; i < itemName.length; i++) {
+            itemList.add(new Item(itemName[i], itemPrice[i]));
+        }
+        ListAdapter arrItemAdapter = new ItemAdapter(this, itemList);
         ListView itemListView = (ListView)findViewById(R.id.itemsList);
         itemListView.setAdapter(arrItemAdapter);
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
