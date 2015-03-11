@@ -31,7 +31,7 @@ public class ItemList_Personal extends ActionBarActivity {
             }
         }
         ListAdapter arrItemAdapter = new ItemAdapter(this, Person.items);
-        ListView itemListView = (ListView)findViewById(R.id.itemList);
+        ListView itemListView = (ListView)findViewById(R.id.itemsList);
         itemListView.setAdapter(arrItemAdapter);
         itemListView.setOnItemClickListener(new AdapterView.onItemClickListener() {
             @Override

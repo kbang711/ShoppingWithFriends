@@ -13,4 +13,6 @@ public class Item {
     }
 
     public String getItemName() { return this.name;}
+
+    public double getItemPrice() { return this.price;}
 }
