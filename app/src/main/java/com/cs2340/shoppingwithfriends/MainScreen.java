@@ -40,7 +40,7 @@ public class MainScreen extends ActionBarActivity {
         startActivity(new Intent(MainScreen.this, AddItem.class));
     }
 
-    public void items(View view) { startActivity(new Intent(MainScreen.this, AddItem.class)); }
+    public void items(View view) { startActivity(new Intent(MainScreen.this, ItemList_Personal.class)); }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -71,6 +71,13 @@
                 <category android:name="android.intent.action.DEFAULT" />
             </intent-filter>
             </activity>
+        <activity android:name=".ItemList_Personal"
+            android:label="Items List">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemList_Personal"/>
+                <category android:name="android.intent.action.DEFAULT"/>
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>
