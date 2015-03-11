@@ -33,7 +33,7 @@ public class ItemList_Personal extends ActionBarActivity {
         ListAdapter arrItemAdapter = new ItemAdapter(this, Person.items);
         ListView itemListView = (ListView)findViewById(R.id.itemsList);
         itemListView.setAdapter(arrItemAdapter);
-        itemListView.setOnItemClickListener(new AdapterView.onItemClickListener() {
+        itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (Person.items.size() == 0) {
