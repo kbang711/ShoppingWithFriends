@@ -55,8 +55,9 @@ public class AddItem extends ActionBarActivity {
                 fileOut.close();
                 fos.close();
                 for (int i = 0; i < Registration.person.size(); i++) {
+                    Log.d("PUSHING", Registration.person.get(i).getName());
                     for (int j = 0; j < Registration.person.get(i).items.size(); j++) {
-                        Log.d("PUSHING", Registration.person.get(i).items.get(j).getItemName());
+                        Log.d("PUSHING ITEM", Registration.person.get(i).items.get(j).getItemName());
                     }
                 }
             } catch (IOException e) {

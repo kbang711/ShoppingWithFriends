@@ -44,7 +44,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
      * Goes back to the Friends Page
      */
     public void back(View view) {
-        startActivity(new Intent(getApplicationContext(), ItemDetail_Personal.class));
+        startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
     }
 
     public void removeItem(View view) {
