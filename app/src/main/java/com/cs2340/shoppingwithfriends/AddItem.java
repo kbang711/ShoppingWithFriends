@@ -1,9 +1,11 @@
 package com.cs2340.shoppingwithfriends;
+        import android.content.Context;
         import android.os.Bundle;
         import android.support.v7.app.ActionBarActivity;
         import android.content.Intent;
         import android.graphics.Color;
         import android.os.Bundle;
+        import android.util.Log;
         import android.view.Menu;
         import android.view.MenuItem;
 //Added more imports
@@ -12,6 +14,10 @@ package com.cs2340.shoppingwithfriends;
         import android.widget.TextView;
         import android.widget.Toast;
         import android.view.View;
+
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.io.ObjectOutputStream;
 
 /**
  * Created by Kevin Bang on 3/4/2015.
@@ -38,6 +44,17 @@ public class AddItem extends ActionBarActivity {
         } else {
             Person.addItem(itemName.getText().toString(), Double.parseDouble(
                             itemPrice.getText().toString()));
+            //Saving Instance Again
+            try {
+                FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
+                ObjectOutputStream fileOut = new ObjectOutputStream(fos);
+                fileOut.writeObject(Registration.person);
+                fileOut.close();
+                fos.close();
+            } catch (IOException e) {
+                Log.e("TEST FILE", "Failed to create file");
+            }
+
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
         }
     }
