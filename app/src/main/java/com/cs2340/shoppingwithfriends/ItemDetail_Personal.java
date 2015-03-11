@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  * Created by Kevin Bang on 3/11/2015.
@@ -35,8 +36,8 @@ public class ItemDetail_Personal extends ActionBarActivity {
         textViewLocation = (TextView)findViewById(R.id.textViewLocationInput);
 
         textViewName.setText(item.getItemName());
-        textViewPrice.setText('$' + String.valueOf(item.getItemName()));
-        textViewPrice.setText("N/A");
+        textViewPrice.setText('$' + String.valueOf(item.getItemPrice()));
+        textViewLocation.setText("N/A");
     }
 
     /**
@@ -52,6 +53,16 @@ public class ItemDetail_Personal extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
         Toast.makeText(getApplicationContext(), "Item Removed",
                 Toast.LENGTH_SHORT).show();
+
+        try {
+            FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
+            ObjectOutputStream fileOut = new ObjectOutputStream(fos);
+            fileOut.writeObject(Registration.person);
+            fileOut.close();
+            fos.close();
+        } catch (IOException e) {
+            Log.e("TEST FILE", "Failed to create file");
+        }
     }
 
     @Override

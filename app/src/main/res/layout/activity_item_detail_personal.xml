@@ -63,7 +63,7 @@
         android:layout_alignLeft="@+id/textViewName"
         android:layout_below="@+id/textViewEmail"
         android:layout_marginTop="38dp"
-        android:text="Location"
+        android:text="Location:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView

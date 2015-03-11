@@ -69,16 +69,19 @@ public class FriendDetail extends ActionBarActivity {
         Toast.makeText(getApplicationContext(), "Removed Friend",
                 Toast.LENGTH_SHORT).show();
 
-        //Saving instance again
         try {
-            FileOutputStream fos = getApplicationContext().openFileOutput("friends", Context.MODE_PRIVATE);
+            FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
             ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-            fileOut.writeObject(Person.friends);
+            fileOut.writeObject(Registration.person);
             fileOut.close();
             fos.close();
         } catch (IOException e) {
             Log.e("TEST FILE", "Failed to create file");
         }
+    }
+
+    public void viewItems(View view) {
+        Person.friends.get(Friends.personClicked);
     }
 
     @Override

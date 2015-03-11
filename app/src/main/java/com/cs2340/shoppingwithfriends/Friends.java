@@ -18,13 +18,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Class that does the main Friends page (has option to go to friends list or add friends)
  * Created by Kevin Bang on 2/10/2015.
  */
-public class Friends extends ActionBarActivity {
+public class Friends extends ActionBarActivity implements Serializable{
     ArrayList<Person> friendsList = new ArrayList<Person>();
     static int personClicked;
 
@@ -35,21 +36,6 @@ public class Friends extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
-
-
-        try {
-            FileInputStream fis = getApplicationContext().openFileInput("friends");
-            ObjectInputStream fileIn = new ObjectInputStream(fis);
-            Person.friends = (ArrayList<Person>) fileIn.readObject();
-            fileIn.close();
-            fis.close();
-        } catch (FileNotFoundException e) {
-            Log.e("TEST FILE", "File not found");
-        } catch (IOException e) {
-            Log.e("TEST FILE", "IOEXCEPTION");
-        } catch (ClassNotFoundException e) {
-            Log.e("TEST FILE", "Class not found");
-        }
 
         Button addFriend = (Button)findViewById(R.id.add_friend);
         addFriend.setOnClickListener(

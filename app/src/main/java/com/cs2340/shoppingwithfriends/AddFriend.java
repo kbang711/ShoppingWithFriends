@@ -53,11 +53,11 @@ public class AddFriend extends ActionBarActivity {
                         exists = true;
                         //Make the Friend you just added add you into their friends list
                         //Registration.person.get(i).addFriend();
-                        //saving the instance again
+
                         try {
-                            FileOutputStream fos = getApplicationContext().openFileOutput("friends", Context.MODE_PRIVATE);
+                            FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
                             ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-                            fileOut.writeObject(Person.friends);
+                            fileOut.writeObject(Registration.person);
                             fileOut.close();
                             fos.close();
                         } catch (IOException e) {

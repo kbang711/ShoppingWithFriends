@@ -3,10 +3,17 @@ package com.cs2340.shoppingwithfriends;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -36,6 +43,25 @@ public class MainActivity extends ActionBarActivity {
                     }
                 }
         );
+        try {
+            FileInputStream fis = getApplicationContext().openFileInput("file");
+            ObjectInputStream fileIn = new ObjectInputStream(fis);
+            Registration.person = (ArrayList<Person>) fileIn.readObject();
+            fileIn.close();
+            fis.close();
+            for(int i = 0; i < Registration.person.size(); i++) {
+                Log.d("PULLING", Registration.person.get(i).getName());
+                for(int j = 0; i < Registration.person.get(i).items.size(); j++) {
+                    Log.d("PULLING ITEM", Registration.person.get(i).items.get(j).getItemName());
+                }
+            }
+        } catch (FileNotFoundException e) {
+            Log.e("TEST FILE", "File not found");
+        } catch (IOException e) {
+            Log.e("TEST FILE", "IOEXCEPTION");
+        } catch (ClassNotFoundException e) {
+            Log.e("TEST FILE", "Class not found");
+        }
     }
 
     @Override

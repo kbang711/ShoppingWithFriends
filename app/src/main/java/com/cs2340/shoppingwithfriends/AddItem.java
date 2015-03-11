@@ -18,6 +18,7 @@ package com.cs2340.shoppingwithfriends;
         import java.io.FileOutputStream;
         import java.io.IOException;
         import java.io.ObjectOutputStream;
+        import java.io.Serializable;
 
 /**
  * Created by Kevin Bang on 3/4/2015.
@@ -44,18 +45,23 @@ public class AddItem extends ActionBarActivity {
         } else {
             Person.addItem(itemName.getText().toString(), Double.parseDouble(
                             itemPrice.getText().toString()));
-            //Saving Instance Again
+
+            startActivity(new Intent(getApplicationContext(), MainScreen.class));
+
             try {
-                FileOutputStream fos = getApplicationContext().openFileOutput("items", Context.MODE_PRIVATE);
+                FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
                 ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-                fileOut.writeObject(Person.items);
+                fileOut.writeObject(Registration.person);
                 fileOut.close();
                 fos.close();
+                for (int i = 0; i < Registration.person.size(); i++) {
+                    for (int j = 0; j < Registration.person.get(i).items.size(); j++) {
+                        Log.d("PUSHING", Registration.person.get(i).items.get(j).getItemName());
+                    }
+                }
             } catch (IOException e) {
                 Log.e("TEST FILE", "Failed to create file");
             }
-
-            startActivity(new Intent(getApplicationContext(), MainScreen.class));
         }
     }
 
