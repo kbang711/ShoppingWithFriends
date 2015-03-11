@@ -3,6 +3,7 @@ package com.cs2340.shoppingwithfriends;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 /**
@@ -23,6 +28,19 @@ public class ItemList_Personal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist_personal);
         ArrayList<Item> itemList = new ArrayList<Item>();
+        try {
+            FileInputStream fis = getApplicationContext().openFileInput("items");
+            ObjectInputStream fileIn = new ObjectInputStream(fis);
+            Person.items = (ArrayList<Item>) fileIn.readObject();
+            fileIn.close();
+            fis.close();
+        } catch (FileNotFoundException e) {
+            Log.e("TEST FILE", "File not found");
+        } catch (IOException e) {
+            Log.e("TEST FILE", "IOEXCEPTION");
+        } catch (ClassNotFoundException e) {
+            Log.e("TEST FILE", "Class not found");
+        }
 
         String[] itemName = new String[1];
         double[] itemPrice = new double[1];

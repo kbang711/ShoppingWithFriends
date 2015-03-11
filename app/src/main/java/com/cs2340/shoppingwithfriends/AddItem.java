@@ -46,9 +46,9 @@ public class AddItem extends ActionBarActivity {
                             itemPrice.getText().toString()));
             //Saving Instance Again
             try {
-                FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
+                FileOutputStream fos = getApplicationContext().openFileOutput("items", Context.MODE_PRIVATE);
                 ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-                fileOut.writeObject(Registration.person);
+                fileOut.writeObject(Person.items);
                 fileOut.close();
                 fos.close();
             } catch (IOException e) {

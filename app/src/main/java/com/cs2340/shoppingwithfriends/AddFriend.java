@@ -55,9 +55,9 @@ public class AddFriend extends ActionBarActivity {
                         //Registration.person.get(i).addFriend();
                         //saving the instance again
                         try {
-                            FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
+                            FileOutputStream fos = getApplicationContext().openFileOutput("friends", Context.MODE_PRIVATE);
                             ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-                            fileOut.writeObject(Registration.person);
+                            fileOut.writeObject(Person.friends);
                             fileOut.close();
                             fos.close();
                         } catch (IOException e) {
