@@ -99,6 +99,13 @@
                 <category android:name="android.intent.action.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".SendDeal"
+            android:label="Send Deal">
+            <intent-filter>
+                <action android:name="android.intent.action.SendDeal"/>
+                <category android:name="android.intent.action.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

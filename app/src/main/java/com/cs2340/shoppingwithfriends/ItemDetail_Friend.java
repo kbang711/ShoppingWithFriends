@@ -25,11 +25,15 @@ import java.util.ArrayList;
 public class ItemDetail_Friend extends ActionBarActivity {
     Item item;
     private TextView textViewName, textViewPrice, textViewLocation;
+    static int personClicked;
+    static int itemChosen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail_friend);
 
+        personClicked = ItemList_Friend.friendClicked;
+        itemChosen = ItemList_Friend.itemClicked;
         item = Login.current.friends.get(ItemList_Friend.friendClicked).items.get(ItemList_Friend.itemClicked);
 
         textViewName = (TextView)findViewById(R.id.textViewNameInput);
@@ -49,43 +53,7 @@ public class ItemDetail_Friend extends ActionBarActivity {
     }
 
     public void removeItem(View view) {
-        Item itemRemoved = Login.current.friends.get(ItemList_Friend.friendClicked).items.get(ItemList_Friend.itemClicked);
-        Login.current.friends.get(ItemList_Friend.friendClicked).items.remove(ItemList_Personal.itemClicked);
-        startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
-        Toast.makeText(getApplicationContext(), "Item Removed",
-                Toast.LENGTH_SHORT).show();
-
-        try {
-            FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
-            ObjectOutputStream fileOut = new ObjectOutputStream(fos);
-            fileOut.writeObject(Registration.person);
-            fileOut.close();
-            fos.close();
-        } catch (IOException e) {
-            Log.e("TEST FILE", "Failed to create file");
-        }
-
-        try {
-            FileInputStream fis = getApplicationContext().openFileInput("file");
-            ObjectInputStream fileIn = new ObjectInputStream(fis);
-            Registration.person = (ArrayList<Person>) fileIn.readObject();
-            fileIn.close();
-            fis.close();
-            for(int i = 0; i < Registration.person.size(); i++) {
-                Log.d("PULLING", Registration.person.get(i).getName());
-                for(int j = 0; i < Registration.person.get(i).items.size(); j++) {
-                    Log.d("PULLING ITEM", Registration.person.get(i).items.get(j).getItemName());
-                }
-            }
-        } catch (FileNotFoundException e) {
-            Log.e("TEST FILE", "File not found");
-        } catch (IOException e) {
-            Log.e("TEST FILE", "IOEXCEPTION");
-        } catch (ClassNotFoundException e) {
-            Log.e("TEST FILE", "Class not found");
-        }
-
-        finish();
+        startActivity(new Intent(getApplicationContext(), SendDeal.class));
     }
 
     @Override
