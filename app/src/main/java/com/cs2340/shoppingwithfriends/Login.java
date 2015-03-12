@@ -35,6 +35,7 @@ public class Login extends ActionBarActivity {
     private TextView attempts;
     private Button login, cancel;
     int counter = 3;
+    public static Person current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,11 @@ public class Login extends ActionBarActivity {
         } else if(Registration.checkCredentials(username.getText().toString(),
                 password.getText().toString())) {
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            for (int i = 0; i < Registration.person.size(); i++) {
+                if (Registration.person.get(i).getUsername().equals(username.getText().toString())) {
+                    current = Registration.person.get(i);
+                }
+            }
             finish();
         } else {
             Toast.makeText(getApplicationContext(), "Wrong Credentials",

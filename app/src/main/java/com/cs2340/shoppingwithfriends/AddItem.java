@@ -43,7 +43,7 @@ public class AddItem extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
         } else {
-            Person.addItem(itemName.getText().toString(), Double.parseDouble(
+            Login.current.addItem(itemName.getText().toString(), Double.parseDouble(
                             itemPrice.getText().toString()));
 
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
