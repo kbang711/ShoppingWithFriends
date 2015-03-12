@@ -47,6 +47,9 @@ public class MainActivity extends ActionBarActivity {
             FileInputStream fis = getApplicationContext().openFileInput("file");
             ObjectInputStream fileIn = new ObjectInputStream(fis);
             Registration.person = (ArrayList<Person>) fileIn.readObject();
+            /*for (int i = 0; i < Registration.person.size(); i++) {
+                Registration.person.get(i).items = Registration.person.get(i).items;
+            }*/
             fileIn.close();
             fis.close();
             for(int i = 0; i < Registration.person.size(); i++) {
