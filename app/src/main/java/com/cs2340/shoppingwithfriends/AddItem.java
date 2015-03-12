@@ -63,6 +63,7 @@ public class AddItem extends ActionBarActivity {
             } catch (IOException e) {
                 Log.e("TEST FILE", "Failed to create file");
             }
+            finish();
         }
     }
 

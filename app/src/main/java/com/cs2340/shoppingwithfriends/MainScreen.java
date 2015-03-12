@@ -65,9 +65,4 @@ public class MainScreen extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public void onBackPressed() {
-        //Do Nothing
-    }
 }

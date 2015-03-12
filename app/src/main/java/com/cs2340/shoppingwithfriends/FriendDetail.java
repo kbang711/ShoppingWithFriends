@@ -78,6 +78,7 @@ public class FriendDetail extends ActionBarActivity {
         } catch (IOException e) {
             Log.e("TEST FILE", "Failed to create file");
         }
+        finish();
     }
 
     public void viewItems(View view) {

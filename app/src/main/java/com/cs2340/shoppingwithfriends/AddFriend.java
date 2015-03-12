@@ -63,6 +63,8 @@ public class AddFriend extends ActionBarActivity {
                         } catch (IOException e) {
                             Log.e("TEST FILE", "Failed to create file");
                         }
+
+                        finish();
                     }
                 }
             }
@@ -72,6 +74,7 @@ public class AddFriend extends ActionBarActivity {
             } else {
                 startActivity(new Intent(getApplicationContext(), Friends.class));
                 Toast.makeText(getApplicationContext(), "Friend Added", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }

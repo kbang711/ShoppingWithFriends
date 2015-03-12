@@ -91,6 +91,7 @@ public class Login extends ActionBarActivity {
         } else if(Registration.checkCredentials(username.getText().toString(),
                 password.getText().toString())) {
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "Wrong Credentials",
                     Toast.LENGTH_SHORT).show();

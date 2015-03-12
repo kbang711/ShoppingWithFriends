@@ -87,6 +87,8 @@ public class ItemDetail_Personal extends ActionBarActivity {
         } catch (ClassNotFoundException e) {
             Log.e("TEST FILE", "Class not found");
         }
+
+        finish();
     }
 
     @Override
