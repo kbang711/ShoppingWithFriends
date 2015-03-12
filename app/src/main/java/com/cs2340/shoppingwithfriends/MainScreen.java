@@ -42,6 +42,8 @@ public class MainScreen extends ActionBarActivity {
 
     public void items(View view) { startActivity(new Intent(MainScreen.this, ItemList_Personal.class)); }
 
+    public void logout(View view) { startActivity(new Intent(MainScreen.this, MainActivity.class)); finish(); }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -62,5 +64,10 @@ public class MainScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Do Nothing
     }
 }
