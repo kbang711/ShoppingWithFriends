@@ -25,6 +25,7 @@ public class FriendDetail extends ActionBarActivity {
     private RatingBar ratingBar;
     Person friend;
     Button back;
+    static int clickedPerson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class FriendDetail extends ActionBarActivity {
         //textViewRating = (TextView)findViewById(R.id.textViewRatingInput);
         textViewNumberOfSalesReports = (TextView)findViewById(R.id.textViewNumberOfSalesInput);
         friend = Login.current.friends.get(Friends.personClicked);
+        clickedPerson = Friends.personClicked;
 
         textViewName.setText(friend.getName());
         textViewEmail.setText(friend.getEmail());
@@ -82,7 +84,7 @@ public class FriendDetail extends ActionBarActivity {
     }
 
     public void viewItems(View view) {
-        Login.current.friends.get(Friends.personClicked);
+        startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
     }
 
     @Override

@@ -54,9 +54,10 @@ public class MainActivity extends ActionBarActivity {
             fis.close();
             for(int i = 0; i < Registration.person.size(); i++) {
                 Log.d("PULLING", Registration.person.get(i).getName());
-                for(int j = 0; i < Registration.person.get(i).items.size(); j++) {
-                    Log.d("PULLING ITEM", Registration.person.get(i).items.get(j).getItemName());
-                }
+                //KEEPS CRASHING THE APP AFTER PRESSING LOGOUT
+                /*for(int j = 0; i < Registration.person.get(i).items.size(); j++) {
+                    //Log.d("PULLING ITEM", Registration.person.get(i).items.get(j).getItemName());
+                }*/
             }
         } catch (FileNotFoundException e) {
             Log.e("TEST FILE", "File not found");

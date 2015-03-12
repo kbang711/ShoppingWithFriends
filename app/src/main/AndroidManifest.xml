@@ -85,6 +85,13 @@
                 <category android:name="android.intent.action.DEFAULT"/>
             </intent-filter>
             </activity>
+        <activity android:name=".ItemList_Friend"
+            android:label="Items List (Friend)">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemList_Friend"/>
+                <category android:name="android.intent.action.DEFAULT"/>
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>
