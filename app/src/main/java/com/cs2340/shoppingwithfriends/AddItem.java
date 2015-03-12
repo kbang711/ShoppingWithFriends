@@ -45,12 +45,15 @@ public class AddItem extends ActionBarActivity {
                     Toast.LENGTH_SHORT).show();
         } else {
 
+            // this is used to find which item the current one is from Registration.person
+            // cant use static current because static current is a COPY of Registration.person (I think...)
             int currentIndex = 0;
             for (int j = 0; j < Registration.person.size(); j++) {
                 if (Registration.person.get(j).getEmail() == Login.current.getEmail()){
                     currentIndex = j;
                 }
             }
+
             Log.d("asdfasdfasdfasdf", currentIndex + "");
             Registration.person.get(currentIndex).items.add(
                     new Item(itemName.getText().toString(),
