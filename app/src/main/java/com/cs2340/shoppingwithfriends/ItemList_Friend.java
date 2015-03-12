@@ -18,11 +18,13 @@ import java.util.ArrayList;
  */
 public class ItemList_Friend extends ActionBarActivity {
     static int itemClicked;
+    static int friendClicked;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist_friend);
         ArrayList<Item> itemList = new ArrayList<Item>();
+        friendClicked = FriendDetail.clickedPerson;
 
         String[] itemName = new String[1];
         double[] itemPrice = new double[1];
@@ -50,7 +52,7 @@ public class ItemList_Friend extends ActionBarActivity {
                             Toast.LENGTH_SHORT).show();
                 } else {
                     itemClicked = position;
-                    startActivity(new Intent(getApplicationContext(), ItemDetail_Personal.class));
+                    startActivity(new Intent(getApplicationContext(), ItemDetail_Friend.class));
                 }
             }
         });

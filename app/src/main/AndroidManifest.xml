@@ -92,6 +92,13 @@
                 <category android:name="android.intent.action.DEFAULT"/>
             </intent-filter>
             </activity>
+        <activity android:name=".ItemDetail_Friend"
+            android:label="Item Details (Friend)">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemDetail_Friend"/>
+                <category android:name="android.intent.action.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
