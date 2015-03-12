@@ -49,21 +49,21 @@ public class Friends extends ActionBarActivity implements Serializable{
         String[] friendName = new String[1];
         String[] friendEmail = new String[1];
         String[] friendUsername = new String[1];
-        if (Login.current.friends.size() == 0) {
+        if (Login.current.getFriends().size() == 0) {
             friendName[0] = "No Friends";
             friendEmail[0] = "";
             friendUsername[0] = "";
         } else {
-            friendName = new String[Login.current.friends.size()];
-            friendEmail = new String[Login.current.friends.size()];
-            for (int i = 0; i < Login.current.friends.size(); i++) {
-                friendName[i] = Login.current.friends.get(i).getName();
-                friendEmail[i] = Login.current.friends.get(i).getEmail();
-                friendUsername[i] = Login.current.friends.get(i).getUsername();
+            friendName = new String[Login.current.getFriends().size()];
+            friendEmail = new String[Login.current.getFriends().size()];
+            for (int i = 0; i < Login.current.getFriends().size(); i++) {
+                friendName[i] = Login.current.getFriends().get(i).getName();
+                friendEmail[i] = Login.current.getFriends().get(i).getEmail();
+                friendUsername[i] = Login.current.getFriends().get(i).getUsername();
             }
         }
         for (int i = 0; i < friendName.length; i++){
-            friendsList.add(new Person(friendName[i], friendEmail[i], friendUsername[i], ""));
+            friendsList.add(new Person(friendName[i], friendEmail[i], friendUsername[i], "", null, null));
         }
 
         ListAdapter arrFriendAdapter = new FriendsAdapter(this, friendsList);
@@ -72,7 +72,7 @@ public class Friends extends ActionBarActivity implements Serializable{
         friendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Login.current.friends.size() == 0) {
+                if (Login.current.getFriends().size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please Add a Friend First",
                             Toast.LENGTH_SHORT).show();
                 } else {

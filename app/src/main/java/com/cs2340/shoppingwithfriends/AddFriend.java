@@ -58,10 +58,10 @@ public class AddFriend extends ActionBarActivity {
                             }
                         }
                         Log.d("asdfasdfasdfasdf", currentIndex + "");
-                        Registration.person.get(currentIndex).friends.add(new Person(
+                        Registration.person.get(currentIndex).getFriends().add(new Person(
                                 name.getText().toString(), email.getText().toString(),
-                                Registration.person.get(i).getUsername(), Registration.person.get(i).getPassword()
-                        ));
+                                Registration.person.get(i).getUsername(), Registration.person.get(i).getPassword(),
+                                Registration.person.get(i).getFriends(), Registration.person.get(i).getItems()));
 
                         exists = true;
                         //Make the Friend you just added add you into their friends list

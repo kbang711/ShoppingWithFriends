@@ -12,8 +12,8 @@ public class Person implements Serializable{
     private String name, email, username, password;
     private static int rating = 0;
     private static int sales = 0;
-    public ArrayList<Person> friends = new ArrayList<Person>();
-    public ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<Person> friends = new ArrayList<Person>();
+    private ArrayList<Item> items = new ArrayList<Item>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -21,13 +21,15 @@ public class Person implements Serializable{
      * @param username Username of the person
      * @param password Password of the person
      */
-    public Person(String name, String email, String username, String password) {
+    public Person(String name, String email, String username, String password, ArrayList<Person> friends, ArrayList<Item> items) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
         this.rating = 0;
         this.sales = 0;
+        this.friends = friends;
+        this.items = items;
     }
 
     /**

@@ -96,7 +96,7 @@ public class Registration extends ActionBarActivity {
             password2.setText("");
         } else {
             person.add(new Person(name.getText().toString(), email.getText().toString(),
-                    username.getText().toString(), password.getText().toString()));
+                    username.getText().toString(), password.getText().toString(), new ArrayList<Person>(), new ArrayList<Item>()));
             startActivity(new Intent(getApplicationContext(), Login.class));
             File file = new File(this.getFilesDir(), "data.json");
             model.saveJson(file);

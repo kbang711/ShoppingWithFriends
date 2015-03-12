@@ -6,16 +6,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Kevin Bang on 3/12/2015.
  */
 public class SendDeal extends ActionBarActivity {
+    private EditText price = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_deal);
+
+        price = (EditText)findViewById(R.id.add_price);
     }
 
     /**
@@ -26,7 +32,14 @@ public class SendDeal extends ActionBarActivity {
     }
 
     public void sendDeal(View view) {
-        startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+        if (price.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Please fill in all fields",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+            Toast.makeText(getApplicationContext(), "Deal Sent",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
