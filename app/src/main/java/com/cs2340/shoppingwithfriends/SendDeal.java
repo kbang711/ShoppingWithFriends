@@ -22,11 +22,11 @@ public class SendDeal extends ActionBarActivity {
      * Goes back to the Friends Page
      */
     public void back(View view) {
-        startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+        startActivity(new Intent(getApplicationContext(), ItemDetail_Friend.class));
     }
 
-    public void removeItem(View view) {
-        startActivity(new Intent(getApplicationContext(), SendDeal.class));
+    public void sendDeal(View view) {
+        startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
     }
 
     @Override

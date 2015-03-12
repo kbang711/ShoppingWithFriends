@@ -100,7 +100,7 @@ public class AddFriend extends ActionBarActivity {
      */
     private boolean checkIfFriend(String name){
         ArrayList<String> nameArr = new ArrayList<String>();
-        for (Person item : Login.current.friends){
+        for (Person item : Login.current.getFriends()){
             nameArr.add(item.getName());
         }
         boolean isFriend = false;

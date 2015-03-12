@@ -34,8 +34,7 @@ public class ItemDetail_Friend extends ActionBarActivity {
 
         personClicked = ItemList_Friend.friendClicked;
         itemChosen = ItemList_Friend.itemClicked;
-        item = Login.current.friends.get(ItemList_Friend.friendClicked).items.get(ItemList_Friend.itemClicked);
-
+        item = Login.current.friends.get(ItemList_Friend.friendClicked).getItems().get(ItemList_Friend.itemClicked);
         textViewName = (TextView)findViewById(R.id.textViewNameInput);
         textViewPrice = (TextView)findViewById(R.id.textViewPriceInput);
         textViewLocation = (TextView)findViewById(R.id.textViewLocationInput);

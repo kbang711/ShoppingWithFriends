@@ -95,4 +95,8 @@ public class Person implements Serializable{
     }
 
     public static int getSales() {return sales;}
+
+    public ArrayList<Item> getItems() { return this.items;}
+
+    public ArrayList<Person> getFriends() { return this.friends;}
 }

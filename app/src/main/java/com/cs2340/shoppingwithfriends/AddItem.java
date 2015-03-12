@@ -16,10 +16,14 @@ package com.cs2340.shoppingwithfriends;
         import android.view.View;
 
         import java.io.File;
+        import java.io.FileInputStream;
+        import java.io.FileNotFoundException;
         import java.io.FileOutputStream;
         import java.io.IOException;
+        import java.io.ObjectInputStream;
         import java.io.ObjectOutputStream;
         import java.io.Serializable;
+        import java.util.ArrayList;
 
 /**
  * Created by Kevin Bang on 3/4/2015.
@@ -55,7 +59,7 @@ public class AddItem extends ActionBarActivity {
             }
 
             Log.d("asdfasdfasdfasdf", currentIndex + "");
-            Registration.person.get(currentIndex).items.add(
+            Registration.person.get(currentIndex).getItems().add(
                     new Item(itemName.getText().toString(),
                         Double.parseDouble(itemPrice.getText().toString())
                     )
@@ -70,8 +74,8 @@ public class AddItem extends ActionBarActivity {
                 fos.close();
                 for (int i = 0; i < Registration.person.size(); i++) {
                     Log.d("PUSHING", Registration.person.get(i).getName());
-                    for (int j = 0; j < Registration.person.get(i).items.size(); j++) {
-                        Log.d("PUSHING ITEM", Registration.person.get(i).items.get(j).getItemName());
+                    for (int j = 0; j < Registration.person.get(i).getItems().size(); j++) {
+                        Log.d("PUSHING ITEM", Registration.person.get(i).getItems().get(j).getItemName());
                     }
                 }
             } catch (IOException e) {

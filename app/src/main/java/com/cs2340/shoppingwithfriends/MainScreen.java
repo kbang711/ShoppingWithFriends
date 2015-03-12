@@ -1,10 +1,12 @@
 package com.cs2340.shoppingwithfriends;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 //Added more imports
@@ -13,6 +15,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 /**
  * Created by Kevin Bang on 1/30/2015.
@@ -42,7 +52,10 @@ public class MainScreen extends ActionBarActivity {
 
     public void items(View view) { startActivity(new Intent(MainScreen.this, ItemList_Personal.class)); }
 
-    public void logout(View view) { startActivity(new Intent(MainScreen.this, MainActivity.class)); finish(); }
+    public void logout(View view) {
+        startActivity(new Intent(MainScreen.this, MainActivity.class));
+        finish();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

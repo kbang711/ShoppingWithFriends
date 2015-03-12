@@ -33,7 +33,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail_personal);
 
-        item = Login.current.items.get(ItemList_Personal.itemClicked);
+        item = Login.current.getItems().get(ItemList_Personal.itemClicked);
 
         textViewName = (TextView)findViewById(R.id.textViewNameInput);
         textViewPrice = (TextView)findViewById(R.id.textViewPriceInput);
@@ -52,8 +52,8 @@ public class ItemDetail_Personal extends ActionBarActivity {
     }
 
     public void removeItem(View view) {
-        Item itemRemoved = Login.current.items.get(ItemList_Personal.itemClicked);
-        Login.current.items.remove(ItemList_Personal.itemClicked);
+        Item itemRemoved = Login.current.getItems().get(ItemList_Personal.itemClicked);
+        Login.current.getItems().remove(ItemList_Personal.itemClicked);
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
         Toast.makeText(getApplicationContext(), "Item Removed",
                 Toast.LENGTH_SHORT).show();
@@ -76,8 +76,8 @@ public class ItemDetail_Personal extends ActionBarActivity {
             fis.close();
             for(int i = 0; i < Registration.person.size(); i++) {
                 Log.d("PULLING", Registration.person.get(i).getName());
-                for(int j = 0; i < Registration.person.get(i).items.size(); j++) {
-                    Log.d("PULLING ITEM", Registration.person.get(i).items.get(j).getItemName());
+                for(int j = 0; i < Registration.person.get(i).getItems().size(); j++) {
+                    Log.d("PULLING ITEM", Registration.person.get(i).getItems().get(j).getItemName());
                 }
             }
         } catch (FileNotFoundException e) {
