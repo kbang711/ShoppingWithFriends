@@ -49,17 +49,17 @@ public class Friends extends ActionBarActivity implements Serializable{
         String[] friendName = new String[1];
         String[] friendEmail = new String[1];
         String[] friendUsername = new String[1];
-        if (Person.friends.size() == 0) {
+        if (Login.current.friends.size() == 0) {
             friendName[0] = "No Friends";
             friendEmail[0] = "";
             friendUsername[0] = "";
         } else {
-            friendName = new String[Person.friends.size()];
-            friendEmail = new String[Person.friends.size()];
-            for (int i = 0; i < Person.friends.size(); i++) {
-                friendName[i] = Person.friends.get(i).getName();
-                friendEmail[i] = Person.friends.get(i).getEmail();
-                friendUsername[i] = Person.friends.get(i).getUsername();
+            friendName = new String[Login.current.friends.size()];
+            friendEmail = new String[Login.current.friends.size()];
+            for (int i = 0; i < Login.current.friends.size(); i++) {
+                friendName[i] = Login.current.friends.get(i).getName();
+                friendEmail[i] = Login.current.friends.get(i).getEmail();
+                friendUsername[i] = Login.current.friends.get(i).getUsername();
             }
         }
         for (int i = 0; i < friendName.length; i++){
@@ -72,7 +72,7 @@ public class Friends extends ActionBarActivity implements Serializable{
         friendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Person.friends.size() == 0) {
+                if (Login.current.friends.size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please Add a Friend First",
                             Toast.LENGTH_SHORT).show();
                 } else {

@@ -15,6 +15,7 @@ package com.cs2340.shoppingwithfriends;
         import android.widget.Toast;
         import android.view.View;
 
+        import java.io.File;
         import java.io.FileOutputStream;
         import java.io.IOException;
         import java.io.ObjectOutputStream;
@@ -43,9 +44,19 @@ public class AddItem extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
         } else {
-            Login.current.addItem(itemName.getText().toString(), Double.parseDouble(
-                            itemPrice.getText().toString()));
 
+            int currentIndex = 0;
+            for (int j = 0; j < Registration.person.size(); j++) {
+                if (Registration.person.get(j).getEmail() == Login.current.getEmail()){
+                    currentIndex = j;
+                }
+            }
+            Log.d("asdfasdfasdfasdf", currentIndex + "");
+            Registration.person.get(currentIndex).items.add(
+                    new Item(itemName.getText().toString(),
+                        Double.parseDouble(itemPrice.getText().toString())
+                    )
+            );
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
 
             try {

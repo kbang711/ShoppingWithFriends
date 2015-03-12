@@ -33,7 +33,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail_personal);
 
-        item = Person.items.get(ItemList_Personal.itemClicked);
+        item = Login.current.items.get(ItemList_Personal.itemClicked);
 
         textViewName = (TextView)findViewById(R.id.textViewNameInput);
         textViewPrice = (TextView)findViewById(R.id.textViewPriceInput);
@@ -52,8 +52,8 @@ public class ItemDetail_Personal extends ActionBarActivity {
     }
 
     public void removeItem(View view) {
-        Item itemRemoved = Person.items.get(ItemList_Personal.itemClicked);
-        Person.items.remove(ItemList_Personal.itemClicked);
+        Item itemRemoved = Login.current.items.get(ItemList_Personal.itemClicked);
+        Login.current.items.remove(ItemList_Personal.itemClicked);
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
         Toast.makeText(getApplicationContext(), "Item Removed",
                 Toast.LENGTH_SHORT).show();

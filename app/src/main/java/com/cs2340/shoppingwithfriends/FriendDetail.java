@@ -35,7 +35,7 @@ public class FriendDetail extends ActionBarActivity {
         textViewEmail = (TextView)findViewById(R.id.textViewEmailInput);
         //textViewRating = (TextView)findViewById(R.id.textViewRatingInput);
         textViewNumberOfSalesReports = (TextView)findViewById(R.id.textViewNumberOfSalesInput);
-        friend = Person.friends.get(Friends.personClicked);
+        friend = Login.current.friends.get(Friends.personClicked);
 
         textViewName.setText(friend.getName());
         textViewEmail.setText(friend.getEmail());
@@ -57,8 +57,8 @@ public class FriendDetail extends ActionBarActivity {
 
     public void removeFriend(View view) {
         //Need to figure out a way to remove yourself from that "friend's" friend list
-        Person friendRemove = Person.friends.get(Friends.personClicked);
-        Person.friends.remove(Friends.personClicked);
+        Person friendRemove = Login.current.friends.get(Friends.personClicked);
+        Login.current.friends.remove(Friends.personClicked);
         //Remove yourself from the friend's friends list
         /*for (int i = 0; i < Registration.person.size(); i++) {
             if (Registration.person.get(i).equals(friendRemove)) {
@@ -82,7 +82,7 @@ public class FriendDetail extends ActionBarActivity {
     }
 
     public void viewItems(View view) {
-        Person.friends.get(Friends.personClicked);
+        Login.current.friends.get(Friends.personClicked);
     }
 
     @Override

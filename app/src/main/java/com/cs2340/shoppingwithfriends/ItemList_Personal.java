@@ -31,14 +31,14 @@ public class ItemList_Personal extends ActionBarActivity {
 
         String[] itemName = new String[1];
         double[] itemPrice = new double[1];
-        if (Person.items.size() == 0) {
+        if (Login.current.items.size() == 0) {
             itemName[0] = "No Items Added";
         } else {
-            itemName = new String[Person.items.size()];
-            itemPrice = new double[Person.items.size()];
-            for (int i = 0; i < Person.items.size(); i++) {
-                itemName[i] = Person.items.get(i).getItemName();
-                itemPrice[i] = Person.items.get(i).getItemPrice();
+            itemName = new String[Login.current.items.size()];
+            itemPrice = new double[Login.current.items.size()];
+            for (int i = 0; i < Login.current.items.size(); i++) {
+                itemName[i] = Login.current.items.get(i).getItemName();
+                itemPrice[i] = Login.current.items.get(i).getItemPrice();
             }
         }
         for (int i = 0; i < itemName.length; i++) {
@@ -50,7 +50,7 @@ public class ItemList_Personal extends ActionBarActivity {
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Person.items.size() == 0) {
+                if (Login.current.items.size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please add an item first",
                             Toast.LENGTH_SHORT).show();
                 } else {

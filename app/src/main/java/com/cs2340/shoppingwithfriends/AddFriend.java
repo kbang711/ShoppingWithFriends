@@ -48,8 +48,21 @@ public class AddFriend extends ActionBarActivity {
                         compareToIgnoreCase(email.getText().toString()) == 0) {
                     if (Registration.person.get(i).getName().
                             compareToIgnoreCase(name.getText().toString()) == 0) {
-                        Person.addFriend(name.getText().toString(), email.getText().toString(),
-                                Registration.person.get(i).getUsername());
+                        //Person.addFriend(name.getText().toString(), email.getText().toString(),
+                        //        Registration.person.get(i).getUsername());
+
+                        int currentIndex = 0;
+                        for (int j = 0; j < Registration.person.size(); j++) {
+                            if (Registration.person.get(j).getEmail() == Login.current.getEmail()){
+                                currentIndex = j;
+                            }
+                        }
+                        Log.d("asdfasdfasdfasdf", currentIndex + "");
+                        Registration.person.get(currentIndex).friends.add(new Person(
+                                name.getText().toString(), email.getText().toString(),
+                                Registration.person.get(i).getUsername(), Registration.person.get(i).getPassword()
+                        ));
+
                         exists = true;
                         //Make the Friend you just added add you into their friends list
                         //Registration.person.get(i).addFriend();
@@ -87,7 +100,7 @@ public class AddFriend extends ActionBarActivity {
      */
     private boolean checkIfFriend(String name){
         ArrayList<String> nameArr = new ArrayList<String>();
-        for (Person item : Person.friends){
+        for (Person item : Login.current.friends){
             nameArr.add(item.getName());
         }
         boolean isFriend = false;
