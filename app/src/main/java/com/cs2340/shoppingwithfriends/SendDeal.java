@@ -1,7 +1,9 @@
 package com.cs2340.shoppingwithfriends;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,10 +37,23 @@ public class SendDeal extends ActionBarActivity {
         if (price.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
                     Toast.LENGTH_SHORT).show();
+        } else if (Double.parseDouble(price.getText().toString()) > Login.current.getFriends().
+                get(ItemDetail_Friend.personClicked).getItems().get(ItemDetail_Friend.itemChosen).
+                getItemPrice()) {
+            Toast.makeText(getApplicationContext(), "Price is above Friend's price threshold",
+                    Toast.LENGTH_SHORT).show();
         } else {
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(this)
+                    .setContentTitle("Deal Received")
+                    .setContentText("Deal Received for " + Login.current.getFriends().
+                    get(ItemDetail_Friend.personClicked).getItems().get(ItemDetail_Friend.itemChosen).
+                    getItemName());
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            manager.notify(001, mBuilder.build());
             startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
             Toast.makeText(getApplicationContext(), "Deal Sent",
-                    Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_SHORT).show();
         }
     }
 
