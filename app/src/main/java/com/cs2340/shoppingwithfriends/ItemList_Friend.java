@@ -29,19 +29,25 @@ public class ItemList_Friend extends ActionBarActivity {
         //Log.d("Item List:", Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(0).getItemName());
 
         String[] itemName = new String[1];
+        String[] itemLocation = new String[1];
         double[] itemPrice = new double[1];
+        boolean[] itemFound = new boolean[1];
         if (Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size() == 0) {
             itemName[0] = "No Items Added";
         } else {
             itemName = new String[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
+            itemLocation = new String[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
             itemPrice = new double[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
+            itemFound = new boolean[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
             for (int i = 0; i < Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size(); i++) {
                 itemName[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemName();
+                itemLocation[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemLocation();
                 itemPrice[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemPrice();
+                itemFound[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemFound();
             }
         }
         for (int i = 0; i < itemName.length; i++) {
-            itemList.add(new Item(itemName[i], itemPrice[i]));
+            itemList.add(new Item(itemName[i], itemLocation[i], itemPrice[i], itemFound[i]));
         }
         ListAdapter arrItemAdapter = new ItemAdapter(this, itemList);
         ListView itemListView = (ListView)findViewById(R.id.itemsList);

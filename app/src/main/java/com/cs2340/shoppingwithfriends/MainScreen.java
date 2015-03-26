@@ -44,6 +44,13 @@ public class MainScreen extends ActionBarActivity {
                     }
                 }
         );
+
+        for (int i = 0; i < Login.current.getItems().size(); i++) {
+            if (Login.current.getItems().get(i).getItemFound()) {
+                Toast.makeText(getApplicationContext(), "Deal Found: " + Login.current.getItems().get(i).getItemName(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     public void addItem(View view) {

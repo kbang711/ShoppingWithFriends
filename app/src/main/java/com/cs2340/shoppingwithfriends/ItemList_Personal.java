@@ -30,19 +30,25 @@ public class ItemList_Personal extends ActionBarActivity {
         ArrayList<Item> itemList = new ArrayList<Item>();
 
         String[] itemName = new String[1];
+        String[] itemLocation = new String[1];
         double[] itemPrice = new double[1];
+        boolean[] itemFound = new boolean[1];
         if (Login.current.getItems().size() == 0) {
             itemName[0] = "No Items Added";
         } else {
             itemName = new String[Login.current.getItems().size()];
+            itemLocation = new String[Login.current.getItems().size()];
             itemPrice = new double[Login.current.getItems().size()];
+            itemFound = new boolean[Login.current.getItems().size()];
             for (int i = 0; i < Login.current.getItems().size(); i++) {
                 itemName[i] = Login.current.getItems().get(i).getItemName();
+                itemLocation[i] = Login.current.getItems().get(i).getItemLocation();
                 itemPrice[i] = Login.current.getItems().get(i).getItemPrice();
+                itemFound[i] = Login.current.getItems().get(i).getItemFound();
             }
         }
         for (int i = 0; i < itemName.length; i++) {
-            itemList.add(new Item(itemName[i], itemPrice[i]));
+            itemList.add(new Item(itemName[i], itemLocation[i], itemPrice[i], itemFound[i]));
         }
         ListAdapter arrItemAdapter = new ItemAdapter(this, itemList);
         ListView itemListView = (ListView)findViewById(R.id.itemsList);

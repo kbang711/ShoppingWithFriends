@@ -28,6 +28,7 @@ import java.util.ArrayList;
 public class ItemDetail_Personal extends ActionBarActivity {
     Item item;
     private TextView textViewName, textViewPrice, textViewLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
 
         textViewName.setText(item.getItemName());
         textViewPrice.setText('$' + String.valueOf(item.getItemPrice()));
-        textViewLocation.setText("N/A");
+        textViewLocation.setText(item.getItemLocation());
     }
 
     /**

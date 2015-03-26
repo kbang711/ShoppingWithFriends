@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
             /*for (int i = 0; i < Registration.person.size(); i++) {
                 Registration.person.get(i).items = Registration.person.get(i).items;
             }*/
+            //deleteFile("file");
             fileIn.close();
             fis.close();
             for(int i = 0; i < Registration.person.size(); i++) {
@@ -62,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
         } catch (FileNotFoundException e) {
             Log.e("TEST FILE", "File not found");
         } catch (IOException e) {
-            Log.e("TEST FILE", "IOEXCEPTION");
+            Log.e("TEST FILE", "IOException");
         } catch (ClassNotFoundException e) {
             Log.e("TEST FILE", "Class not found");
         }

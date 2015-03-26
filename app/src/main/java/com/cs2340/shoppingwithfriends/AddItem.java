@@ -60,8 +60,8 @@ public class AddItem extends ActionBarActivity {
 
             Log.d("asdfasdfasdfasdf", currentIndex + "");
             Registration.person.get(currentIndex).getItems().add(
-                    new Item(itemName.getText().toString(),
-                        Double.parseDouble(itemPrice.getText().toString())
+                    new Item(itemName.getText().toString(), "N/A",
+                        Double.parseDouble(itemPrice.getText().toString()), false
                     )
             );
             startActivity(new Intent(getApplicationContext(), MainScreen.class));

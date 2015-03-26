@@ -7,14 +7,24 @@ import java.io.Serializable;
  */
 public class Item implements Serializable {
     private String name;
+    private String location;
     private double price;
+    private boolean found;
 
-    public Item(String name, double price) {
+    public Item(String name, String location, double price, boolean found) {
         this.name = name;
+        this.location = location;
         this.price = price;
+        this.found = found;
     }
 
     public String getItemName() { return this.name;}
 
+    public String getItemLocation() { return this.location;}
+
     public double getItemPrice() { return this.price;}
+
+    public boolean getItemFound() { return this.found;}
+
+    public void setItemFound(boolean b) { found = b;}
 }

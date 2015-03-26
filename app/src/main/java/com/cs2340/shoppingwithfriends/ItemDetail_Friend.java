@@ -41,7 +41,7 @@ public class ItemDetail_Friend extends ActionBarActivity {
 
         textViewName.setText(item.getItemName());
         textViewPrice.setText('$' + String.valueOf(item.getItemPrice()));
-        textViewLocation.setText("N/A");
+        textViewLocation.setText(item.getItemLocation());
     }
 
     /**
