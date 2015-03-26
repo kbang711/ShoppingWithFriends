@@ -95,4 +95,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:onClick="back"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/location"
+        android:onClick="getLocation"
+        android:layout_alignBottom="@+id/textViewLocationInput"
+        android:layout_toEndOf="@+id/textViewLocation" />
 </RelativeLayout>

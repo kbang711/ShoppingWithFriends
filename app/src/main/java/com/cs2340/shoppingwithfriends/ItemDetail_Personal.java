@@ -52,6 +52,10 @@ public class ItemDetail_Personal extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
     }
 
+    public void getLocation(View view) {
+        startActivity(new Intent(getApplicationContext(), Maps.class));
+    }
+
     public void removeItem(View view) {
         Item itemRemoved = Login.current.getItems().get(ItemList_Personal.itemClicked);
         Login.current.getItems().remove(ItemList_Personal.itemClicked);
