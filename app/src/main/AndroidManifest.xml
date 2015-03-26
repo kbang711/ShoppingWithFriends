@@ -100,12 +100,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".SendDeal"
-            android:label="Send Deal">
+        android:label="Send Deal">
+        <intent-filter>
+            <action android:name="android.intent.action.SendDeal"/>
+            <category android:name="android.intent.action.DEFAULT"/>
+        </intent-filter>
+    </activity>
+        <activity android:name=".Maps"
+            android:label="Maps">
             <intent-filter>
-                <action android:name="android.intent.action.SendDeal"/>
+                <action android:name="android.intent.action.Maps"/>
                 <category android:name="android.intent.action.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
