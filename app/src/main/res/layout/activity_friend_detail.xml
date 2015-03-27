@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FriendDetail"
-    android:background="#ffdbf5ff">
+    android:background="#ffdbf5ff"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/textViewMain"
@@ -23,24 +24,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Name:"
+        android:text="@string/name_view"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/textViewNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/textViewName"
+        android:layout_toEndOf="@+id/textViewName"
         android:layout_alignBottom="@+id/textViewName"
-        android:layout_marginLeft="20dp"
-        android:text="name"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:layout_marginStart="20dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewName"
+        android:layout_alignStart="@+id/textViewName"
         android:layout_below="@+id/textViewName"
         android:layout_marginTop="38dp"
         android:text="@string/email"
@@ -50,20 +52,20 @@
         android:id="@+id/textViewEmailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/textViewEmail"
+        android:layout_toEndOf="@+id/textViewEmail"
         android:layout_alignBottom="@+id/textViewEmail"
-        android:layout_marginLeft="20dp"
-        android:text="email"
+        android:layout_marginStart="20dp"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <TextView
         android:id="@+id/textViewRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewName"
+        android:layout_alignStart="@+id/textViewName"
         android:layout_below="@+id/textViewEmail"
         android:layout_marginTop="38dp"
-        android:text="Rating:"
+        android:text="@string/rating_view"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 <!--
     <TextView
@@ -80,20 +82,20 @@
         android:id="@+id/textViewNumberOfSales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewName"
+        android:layout_alignStart="@+id/textViewName"
         android:layout_below="@+id/textViewRating"
         android:layout_marginTop="38dp"
-        android:text="Number\nof Sales:"
+        android:text="@string/number_of_sales"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/textViewNumberOfSalesInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/textViewNumberOfSales"
+        android:layout_toEndOf="@+id/textViewNumberOfSales"
         android:layout_alignBottom="@+id/textViewNumberOfSales"
-        android:layout_marginLeft="20dp"
-        android:text="number"
+        android:layout_marginStart="20dp"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
@@ -101,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="removeFriend"
-        android:text="Remove Friend"
+        android:text="@string/remove_friend_title"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -111,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="viewItems"
-        android:text="View Items"
+        android:text="@string/view_item_title"
         android:layout_above="@+id/buttonRemoveFriend"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -120,11 +122,12 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/friends_page_back"
         android:id="@+id/buttonBack"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="back"/>
+        android:onClick="back"
+        tools:ignore="RelativeOverlap" />
 
     <RatingBar
         android:layout_width="wrap_content"

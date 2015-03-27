@@ -3,7 +3,6 @@ package com.cs2340.shoppingwithfriends;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +14,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/12/2015.
+ * This class is the list of items a friend might have.
  */
+@SuppressWarnings({"ALL", "UnusedParameters"})
 public class ItemList_Friend extends ActionBarActivity {
     static int itemClicked;
     static int friendClicked;
@@ -24,7 +24,7 @@ public class ItemList_Friend extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist_friend);
-        ArrayList<Item> itemList = new ArrayList<Item>();
+        ArrayList<Item> itemList = new ArrayList<>();
         friendClicked = FriendDetail.clickedPerson;
         //Log.d("Item List:", Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(0).getItemName());
 
@@ -68,7 +68,7 @@ public class ItemList_Friend extends ActionBarActivity {
 
     /**
      * Goes back to the MainScreen
-     * @param view
+     * @param view View the app is on
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), FriendDetail.class));
@@ -81,9 +81,6 @@ public class ItemList_Friend extends ActionBarActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }

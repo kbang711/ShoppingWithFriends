@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+@SuppressWarnings("unchecked")
 public class MainActivity extends ActionBarActivity {
 
     /* Added variables - Kevin Bang*/

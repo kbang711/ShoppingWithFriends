@@ -17,8 +17,6 @@
     <string name="mainscreen_friend_button">Friends</string>
     <string name="friend_title">Friends</string>
     <string name="title_activity_add_friend">Add Friend</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_add__friend">Add_Friend</string>
     <string name="add_friend_title">Add Friend</string>
     <string name="add_friend_input_title">Enter Friend\'s Name</string>
     <string name="add_friend_email_title">Enter Friend\'s Email</string>
@@ -28,5 +26,21 @@
     <string name="add_item_title">Add Item</string>
     <string name="add_item_name_title">Add Item Name</string>
     <string name="add_item_price_title">Add Item Price Threshold</string>
+    <string name="send_deal_title">Send Deal</string>
+    <string name="item_details_title">Item Details</string>
+    <string name="friends_items_title">Friend\'s Items</string>
+    <string name="personal_items_title">Personal Items</string>
+    <string name="main_logo">Main Logo</string>
+    <string name="name_view">Name:</string>
+    <string name="price_view">Price:</string>
+    <string name="items_button">Items</string>
+    <string name="location_view">Location:</string>
+    <string name="logout">Logout</string>
+    <string name="rating_view">Rating:</string>
+    <string name="remove_item_title">Remove Item</string>
+    <string name="number_of_sales">Number\n of Sales:</string>
+    <string name="location_button">Location</string>
+    <string name="remove_friend_title">Remove Friend</string>
+    <string name="view_item_title">View Item</string>
 
 </resources>

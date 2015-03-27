@@ -3,31 +3,22 @@ package com.cs2340.shoppingwithfriends;
         import android.os.Bundle;
         import android.support.v7.app.ActionBarActivity;
         import android.content.Intent;
-        import android.graphics.Color;
-        import android.os.Bundle;
         import android.util.Log;
         import android.view.Menu;
         import android.view.MenuItem;
 //Added more imports
-        import android.widget.Button;
         import android.widget.EditText;
-        import android.widget.TextView;
         import android.widget.Toast;
         import android.view.View;
 
-        import java.io.File;
-        import java.io.FileInputStream;
-        import java.io.FileNotFoundException;
         import java.io.FileOutputStream;
         import java.io.IOException;
-        import java.io.ObjectInputStream;
         import java.io.ObjectOutputStream;
-        import java.io.Serializable;
-        import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/4/2015.
+ * This class is where we add items to your personal list.
  */
+@SuppressWarnings("ALL")
 public class AddItem extends ActionBarActivity {
     private EditText itemName = null;
     private EditText itemPrice = null;
@@ -43,6 +34,10 @@ public class AddItem extends ActionBarActivity {
         itemPrice = (EditText)findViewById(R.id.add_item_price);
     }
 
+    /**
+     * Adds item to your personal list
+     * @param view View app is on
+     */
     public void addItem(View view) {
         if (itemName.getText().toString().equals("") || itemPrice.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Please fill in all fields",
@@ -53,7 +48,7 @@ public class AddItem extends ActionBarActivity {
             // cant use static current because static current is a COPY of Registration.person (I think...)
             int currentIndex = 0;
             for (int j = 0; j < Registration.person.size(); j++) {
-                if (Registration.person.get(j).getEmail() == Login.current.getEmail()){
+                if (Registration.person.get(j).getEmail().equals(Login.current.getEmail())){
                     currentIndex = j;
                 }
             }

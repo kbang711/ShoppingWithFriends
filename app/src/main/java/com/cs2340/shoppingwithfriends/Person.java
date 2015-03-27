@@ -1,5 +1,4 @@
 package com.cs2340.shoppingwithfriends;
-import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -8,12 +7,16 @@ import java.util.ArrayList;
  * and password of a user in one object.
  * Created by Kevin Bang on 2/5/2015.
  */
+@SuppressWarnings("ALL")
 public class Person implements Serializable{
-    private String name, email, username, password;
+    private final String name;
+    private final String email;
+    private final String username;
+    private final String password;
     private static int rating = 0;
     private static int sales = 0;
-    private ArrayList<Person> friends = new ArrayList<Person>();
-    private ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<Person> friends = new ArrayList<>();
+    private ArrayList<Item> items = new ArrayList<>();
 
     /**
      * Constructor for a person that sets the email, username, and password
@@ -86,19 +89,43 @@ public class Person implements Serializable{
         //items.add(new Item(name, price));
     }
 
+    /**
+     * Sets the rating
+     * @param rate Rating you want to give the person
+     */
     public static void setRating(int rate) {
         rating = rate;
     }
 
+    /**
+     * Gets the rating
+     * @return rating
+     */
     public static int getRating() {return rating;}
 
+    /**
+     * Sets the sale
+     * @param sale Sale you want to set
+     */
     public static void setSales(int sale) {
         sales = sale;
     }
 
+    /**
+     * Gets the sales
+     * @return sales
+     */
     public static int getSales() {return sales;}
 
+    /**
+     * Gets the items
+     * @return items
+     */
     public ArrayList<Item> getItems() { return this.items;}
 
+    /**
+     * Gets your friends
+     * @return friends
+     */
     public ArrayList<Person> getFriends() { return this.friends;}
 }

@@ -18,13 +18,14 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 /**
- * Created by Kevin Bang on 2/19/2015.
+ * This class goes into more detail for a specific friend chosen.
  */
+@SuppressWarnings("ALL")
 public class FriendDetail extends ActionBarActivity {
     private TextView textViewName, textViewEmail, textViewRating, textViewNumberOfSalesReports;
     private RatingBar ratingBar;
-    Person friend;
-    Button back;
+    private Person friend;
+    private Button back;
     static int clickedPerson;
 
     @Override
@@ -52,14 +53,19 @@ public class FriendDetail extends ActionBarActivity {
 
     /**
      * Goes back to the Friends Page
+     * @param view View the app is on
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), Friends.class));
     }
 
+    /**
+     * Removes a friend from your friends list
+     * @param view View the app is on
+     */
     public void removeFriend(View view) {
         //Need to figure out a way to remove yourself from that "friend's" friend list
-        Person friendRemove = Login.current.getFriends().get(Friends.personClicked);
+        //Person friendRemove = Login.current.getFriends().get(Friends.personClicked);
         Login.current.getFriends().remove(Friends.personClicked);
         //Remove yourself from the friend's friends list
         /*for (int i = 0; i < Registration.person.size(); i++) {
@@ -83,6 +89,10 @@ public class FriendDetail extends ActionBarActivity {
         finish();
     }
 
+    /**
+     * Views the items of your friend
+     * @param view View the app is on
+     */
     public void viewItems(View view) {
         startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
     }
@@ -96,9 +106,6 @@ public class FriendDetail extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }

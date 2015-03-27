@@ -1,14 +1,13 @@
 package com.cs2340.shoppingwithfriends;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // We can create custom adapters
@@ -35,7 +34,7 @@ class FriendsAdapter extends ArrayAdapter<Person> {
 
         // inflate takes the resource to load, the parent that the resource may be
         // loaded into and true or false if we are loading into a parent view.
-        View theView = theInflater.inflate(R.layout.friends_list_layout, parent, false);
+        @SuppressLint("ViewHolder") View theView = theInflater.inflate(R.layout.friends_list_layout, parent, false);
 
         // We retrieve the text from the array
         Person fPerson = getItem(position);

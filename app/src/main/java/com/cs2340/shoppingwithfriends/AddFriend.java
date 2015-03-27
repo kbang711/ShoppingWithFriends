@@ -17,6 +17,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
+@SuppressWarnings("ALL")
 public class AddFriend extends ActionBarActivity {
     private EditText name = null;
     private EditText email = null;
@@ -33,7 +34,7 @@ public class AddFriend extends ActionBarActivity {
     /**
      * Adds friend to person who adds the friend. Since friendship is mutual, both people become
      * friends
-     * @param view
+     * @param view View the app is on
      */
     public void addFriend(View view) {
         boolean exists = false;
@@ -53,7 +54,7 @@ public class AddFriend extends ActionBarActivity {
 
                         int currentIndex = 0;
                         for (int j = 0; j < Registration.person.size(); j++) {
-                            if (Registration.person.get(j).getEmail() == Login.current.getEmail()){
+                            if (Registration.person.get(j).getEmail().equals(Login.current.getEmail())){
                                 currentIndex = j;
                             }
                         }
@@ -95,11 +96,11 @@ public class AddFriend extends ActionBarActivity {
     /**
      * Checks if the person is already friends to ensure that you can't add the same friend
      * twice.
-     * @param name
-     * @return
+     * @param name Name of the person
+     * @return true if person is already a friend
      */
     private boolean checkIfFriend(String name){
-        ArrayList<String> nameArr = new ArrayList<String>();
+        ArrayList<String> nameArr = new ArrayList<>();
         for (Person item : Login.current.getFriends()){
             nameArr.add(item.getName());
         }
@@ -112,6 +113,10 @@ public class AddFriend extends ActionBarActivity {
         return isFriend;
     }
 
+    /**
+     * Goes back a page
+     * @param view View the app is on
+     */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), Friends.class));
     }

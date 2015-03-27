@@ -1,27 +1,19 @@
 package com.cs2340.shoppingwithfriends;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/12/2015.
+ * This class goes into detail of an item in your friend's item list.
  */
+@SuppressWarnings("ALL")
 public class ItemDetail_Friend extends ActionBarActivity {
     Item item;
     private TextView textViewName, textViewPrice, textViewLocation;
@@ -51,6 +43,10 @@ public class ItemDetail_Friend extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
     }
 
+    /**
+     * Sends the deal to the friend
+     * @param view View the app is on
+     */
     public void sendDeal(View view) {
         startActivity(new Intent(getApplicationContext(), SendDeal.class));
     }
@@ -64,9 +60,6 @@ public class ItemDetail_Friend extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }

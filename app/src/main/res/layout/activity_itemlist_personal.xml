@@ -13,7 +13,7 @@
         android:id="@+id/textViewMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personal Items"
+        android:text="@string/personal_items_title"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />

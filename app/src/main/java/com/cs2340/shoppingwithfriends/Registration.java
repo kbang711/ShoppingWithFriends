@@ -4,30 +4,26 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 //Added more imports
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Class that does the Registration page.
  * Created by Kevin Bang on 1/30/2015.
  */
+@SuppressWarnings("UnusedParameters")
 public class Registration extends ActionBarActivity {
     private EditText username = null;
     private EditText password = null;
@@ -48,7 +44,7 @@ public class Registration extends ActionBarActivity {
         username = (EditText)findViewById(R.id.editTextUser);
         password = (EditText)findViewById(R.id.editTextPW);
         password2 = (EditText)findViewById(R.id.editTextPW2);
-        Button register = (Button)findViewById(R.id.buttonRegister);
+        //Button register = (Button)findViewById(R.id.buttonRegister);
         Button cancel = (Button)findViewById(R.id.cancel);
 
         cancel.setOnClickListener(
@@ -64,7 +60,7 @@ public class Registration extends ActionBarActivity {
      * Registers the user.
      * Checks to make sure each field is filled, the
      * username or email doesn't already exist, and if the passwords don't match.
-     * @param view
+     * @param view View the app is on
      */
     public void register(View view) {
         DataHolder model = DataHolder.getInstance();
@@ -128,7 +124,7 @@ public class Registration extends ActionBarActivity {
      * @param username Username being checked for
      * @return True if Username or Email already exists in the list.
      */
-    public static boolean checkEmailUser(String email, String username) {
+    private static boolean checkEmailUser(String email, String username) {
         boolean done = false;
         for (int i = 0; i < person.size(); i++) {
             if (person.get(i).getEmail().equals(email)) {
@@ -142,19 +138,39 @@ public class Registration extends ActionBarActivity {
         return done;
     }
 
-    public boolean isValidEmailAddress(EditText s) {
-       return s.getText().toString().matches("[A-Za-z0-9._\\%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+    /**
+     * Checks if the email is valid
+     * @param s Email the user input
+     * @return true if valid email
+     */
+    boolean isValidEmailAddress(EditText s) {
+       return s.getText().toString().matches("[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
     }
 
-    public boolean testPassword(EditText s) {
+    /**
+     * Tests the password
+     * @param s Password user inputs
+     * @return true if password matches
+     */
+    boolean testPassword(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
 
-    public boolean testUsername(EditText s) {
+    /**
+     * Tests the username
+     * @param s Username the user inputs
+     * @return true if the username matches
+     */
+    boolean testUsername(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
 
-    public boolean testName(EditText s) {
+    /**
+     * Tests the name
+     * @param s Name the user inputs
+     * @return true if the name matches
+     */
+    boolean testName(EditText s) {
         return s.getText().toString().matches("^([a-zA-Z'-]+\\s+){1,4}[a-zA-z'-]+$");
     }
 
@@ -177,14 +193,15 @@ public class Registration extends ActionBarActivity {
         return done;
     }
 
-    /**
-     * Cancel method to go back to main screen
-     * @param view
-     * @return
-     */
-    public void cancel(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
+// --Commented out by Inspection START (3/27/2015 2:44 PM):
+//    /**
+//     * Cancel method to go back to main screen
+//     * @param view View the app is on
+//     */
+//    public void cancel(View view) {
+//        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//    }
+// --Commented out by Inspection STOP (3/27/2015 2:44 PM)
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

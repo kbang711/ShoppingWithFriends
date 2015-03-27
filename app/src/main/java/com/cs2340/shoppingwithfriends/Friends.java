@@ -4,7 +4,6 @@ package com.cs2340.shoppingwithfriends;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,10 +13,6 @@ import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -25,8 +20,9 @@ import java.util.ArrayList;
  * Class that does the main Friends page (has option to go to friends list or add friends)
  * Created by Kevin Bang on 2/10/2015.
  */
+@SuppressWarnings("ALL")
 public class Friends extends ActionBarActivity implements Serializable{
-    ArrayList<Person> friendsList = new ArrayList<Person>();
+    private final ArrayList<Person> friendsList = new ArrayList<>();
     static int personClicked;
 
     /**

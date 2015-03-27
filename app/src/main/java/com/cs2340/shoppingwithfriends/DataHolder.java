@@ -1,7 +1,5 @@
 package com.cs2340.shoppingwithfriends;
 
-import android.content.Context;
-import android.os.Environment;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -9,27 +7,22 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/4/2015.
+ * Demo data holder class.
  */
 public class DataHolder {
-    private static DataHolder instance = new DataHolder();
+    private static final DataHolder instance = new DataHolder();
 
     public static DataHolder getInstance() { return instance; }
 
-    ArrayList<Person> users = new ArrayList<Person>();
+    private final ArrayList<Person> users = new ArrayList<>();
 
     private DataHolder() {
         makeData();

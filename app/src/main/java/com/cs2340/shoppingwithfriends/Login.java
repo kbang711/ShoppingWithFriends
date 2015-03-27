@@ -1,6 +1,5 @@
 package com.cs2340.shoppingwithfriends;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -20,21 +19,19 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Class that does the Login Page.
  */
+@SuppressWarnings({"UnusedParameters", "unchecked"})
 public class Login extends ActionBarActivity {
 
     /* Added variables - Kevin Bang*/
     private EditText username = null;
     private EditText password = null;
     private TextView attempts;
-    private Button login, cancel;
-    int counter = 3;
+    private int counter = 3;
     public static Person current;
 
     @Override
@@ -47,7 +44,7 @@ public class Login extends ActionBarActivity {
         attempts = (TextView)findViewById(R.id.textView5);
         attempts.setText(Integer.toString(counter));
         //login(findViewById(R.id.button1));
-        Button login = (Button)findViewById(R.id.button1);
+        //Button login = (Button)findViewById(R.id.button1);
         Button cancel = (Button)findViewById(R.id.cancel);
 
         cancel.setOnClickListener(
@@ -78,7 +75,7 @@ public class Login extends ActionBarActivity {
      * Logins the User.
      * Checks to make sure all fields are filled, Username and Password are a match, and tells
      * the user if the username and password aren't a match.
-     * @param view
+     * @param view View the app is on
      */
     public void login(View view) {
         //startActivity(new Intent(Login.this, MainScreen.class));

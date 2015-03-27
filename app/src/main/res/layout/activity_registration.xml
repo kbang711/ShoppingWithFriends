@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Registration"
-    android:background="#ffdbf5ff">
+    android:background="#ffdbf5ff"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/textView1"
@@ -22,27 +23,28 @@
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="50dp"
-        android:text="Name:"
+        android:text="@string/name_view"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
         android:layout_alignBottom="@+id/textViewName"
-        android:layout_toRightOf="@+id/textViewName"
+        android:layout_toEndOf="@+id/textViewName"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textViewName"
         android:layout_marginTop="50dp"
         android:text="@string/email"
@@ -53,16 +55,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewEmail"
-        android:layout_marginLeft="38dp"
-        android:layout_toRightOf="@+id/textViewEmail"
+        android:layout_marginStart="38dp"
+        android:layout_toEndOf="@+id/textViewEmail"
         android:ems="10"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewEmail"
+        android:layout_alignStart="@+id/textViewEmail"
         android:layout_below="@+id/textViewEmail"
         android:layout_marginTop="38dp"
         android:text="@string/username"
@@ -73,15 +76,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewUser"
-        android:layout_toRightOf="@+id/textViewUser"
+        android:layout_toEndOf="@+id/textViewUser"
         android:ems="10"
-        android:inputType="text"/>
+        android:inputType="text"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textViewPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewEmail"
+        android:layout_alignStart="@+id/textViewEmail"
         android:layout_below="@+id/textViewUser"
         android:layout_marginTop="38dp"
         android:text="@string/password"
@@ -92,15 +96,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewPW"
-        android:layout_toRightOf="@+id/textViewPW"
+        android:layout_toEndOf="@+id/textViewPW"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textViewPW2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewEmail"
+        android:layout_alignStart="@+id/textViewEmail"
         android:layout_below="@+id/textViewPW"
         android:layout_marginTop="38dp"
         android:text="@string/password2"
@@ -111,9 +116,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textViewPW2"
-        android:layout_toRightOf="@+id/textViewPW2"
+        android:layout_toEndOf="@+id/textViewPW2"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/buttonRegister"
@@ -133,6 +139,6 @@
         android:id="@+id/cancel"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="cancel"/>
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>

@@ -3,7 +3,6 @@ package com.cs2340.shoppingwithfriends;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,22 +11,19 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/9/2015.
+ * This class looks at the list of items that you want.
  */
+@SuppressWarnings({"ALL", "UnusedParameters"})
 public class ItemList_Personal extends ActionBarActivity {
     static int itemClicked;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist_personal);
-        ArrayList<Item> itemList = new ArrayList<Item>();
+        ArrayList<Item> itemList = new ArrayList<>();
 
         String[] itemName = new String[1];
         String[] itemLocation = new String[1];
@@ -69,7 +65,7 @@ public class ItemList_Personal extends ActionBarActivity {
 
     /**
      * Goes back to the MainScreen
-     * @param view
+     * @param view View the app is on
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), MainScreen.class));
@@ -82,9 +78,6 @@ public class ItemList_Personal extends ActionBarActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }

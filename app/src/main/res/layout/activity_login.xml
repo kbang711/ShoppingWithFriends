@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Login"
-    android:background="#ffdbf5ff">
+    android:background="#ffdbf5ff"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/textView1"
@@ -22,7 +23,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="50dp"
         android:text="@string/username"
@@ -33,10 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_marginLeft="32dp"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/textView2"
         android:ems="10"
-        android:inputType="text">
+        android:inputType="text"
+        tools:ignore="LabelFor">
 
         <requestFocus />
     </EditText>
@@ -45,7 +47,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="38dp"
         android:text="@string/password"
@@ -56,9 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignStart="@+id/editText1"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/button1"
@@ -74,9 +77,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="48dp"
         android:text="@string/attempts"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -85,9 +88,9 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignEnd="@+id/textView1"
         android:layout_alignTop="@+id/textView4"
-        android:text="TextView" />
+        android:text="" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -97,6 +100,6 @@
         android:id="@+id/cancel"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="cancel"/>
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>

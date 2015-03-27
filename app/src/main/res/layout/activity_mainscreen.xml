@@ -6,21 +6,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Login"
-    android:background="#ffdbf5ff">
+    tools:context=".MainScreen"
+    android:background="#ffdbf5ff"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/textViewMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
-        android:text="Shopping With Friends"
+        android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="150px"
+        android:layout_height="80dp"
         android:text="@string/mainscreen_friend_button"
         android:id="@+id/mainscreen_friend_button"
         android:layout_marginTop="65dp"
@@ -30,8 +31,8 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="150px"
-        android:text="Add Item"
+        android:layout_height="80dp"
+        android:text="@string/add_item_title"
         android:id="@+id/mainscreen_add_item_button"
         android:onClick="addItem"
         android:layout_marginTop="70dp"
@@ -40,9 +41,9 @@
         android:layout_alignEnd="@+id/mainscreen_items_button" />
 
     <Button
-        android:layout_width="100px"
-        android:layout_height="150px"
-        android:text="Items"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:text="@string/items_button"
         android:id="@+id/mainscreen_items_button"
         android:onClick="items"
         android:layout_below="@+id/mainscreen_friend_button"
@@ -53,7 +54,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="@string/logout"
         android:id="@+id/mainscreen_logout_button"
         android:onClick="logout"/>
 </RelativeLayout>

@@ -8,8 +8,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +17,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Kevin Bang on 3/11/2015.
+ * This class goes into detail of an item in your personal item list.
  */
+@SuppressWarnings({"ALL", "UnusedParameters"})
 public class ItemDetail_Personal extends ActionBarActivity {
-    Item item;
+    private Item item;
     private TextView textViewName, textViewPrice, textViewLocation;
 
     @Override
@@ -52,12 +50,20 @@ public class ItemDetail_Personal extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
     }
 
+    /**
+     * Gets the location
+     * @param view View the app is on
+     */
     public void getLocation(View view) {
         startActivity(new Intent(getApplicationContext(), Maps.class));
     }
 
+    /**
+     * Removes the item from your item list
+     * @param view View the app is on
+     */
     public void removeItem(View view) {
-        Item itemRemoved = Login.current.getItems().get(ItemList_Personal.itemClicked);
+        //Item itemRemoved = Login.current.getItems().get(ItemList_Personal.itemClicked);
         Login.current.getItems().remove(ItemList_Personal.itemClicked);
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
         Toast.makeText(getApplicationContext(), "Item Removed",
@@ -105,9 +111,6 @@ public class ItemDetail_Personal extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }
