@@ -8,6 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FriendDetail"
     android:background="#ffdbf5ff"
+    android:elevation="200px"
     tools:ignore="Overdraw">
 
     <TextView
@@ -99,6 +100,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
+        android:background="@drawable/red_btn"
         android:id="@+id/buttonRemoveFriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,6 +111,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:background="@drawable/green_btn"
         android:id="@+id/buttonViewItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,7 +122,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        android:background="@drawable/grey_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/friends_page_back"

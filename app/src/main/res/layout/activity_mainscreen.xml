@@ -8,50 +8,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainScreen"
     android:background="#ffdbf5ff"
+    android:elevation="200px"
     tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/textViewMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="56dp"
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/mainscreen_logout_button"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
+
         android:layout_height="80dp"
         android:text="@string/mainscreen_friend_button"
         android:id="@+id/mainscreen_friend_button"
-        android:layout_marginTop="65dp"
-        android:layout_below="@+id/textViewMain"
-        android:layout_alignStart="@+id/textViewMain"
-        android:layout_alignEnd="@+id/textViewMain" />
+        android:layout_above="@+id/mainscreen_items_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
+
         android:layout_height="80dp"
         android:text="@string/add_item_title"
         android:id="@+id/mainscreen_add_item_button"
         android:onClick="addItem"
-        android:layout_marginTop="70dp"
-        android:layout_below="@+id/mainscreen_items_button"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/mainscreen_items_button"
-        android:layout_alignEnd="@+id/mainscreen_items_button" />
+        android:layout_alignEnd="@+id/mainscreen_friend_button" />
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:text="@string/items_button"
         android:id="@+id/mainscreen_items_button"
         android:onClick="items"
-        android:layout_below="@+id/mainscreen_friend_button"
-        android:layout_marginTop="70dp"
+        android:layout_above="@+id/mainscreen_add_item_button"
         android:layout_alignStart="@+id/mainscreen_friend_button"
         android:layout_alignEnd="@+id/mainscreen_friend_button" />
 
     <Button
+        android:background="@drawable/red_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/logout"

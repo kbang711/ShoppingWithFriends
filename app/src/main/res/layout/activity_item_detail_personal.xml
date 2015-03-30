@@ -7,6 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemDetail_Personal"
+    android:elevation="200px"
     android:background="#ffdbf5ff">
 
     <TextView
@@ -78,6 +79,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
+        android:background="@drawable/green_btn"
         android:id="@+id/buttonItemRemove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +90,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        android:background="@drawable/grey_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/friends_page_back"
@@ -106,4 +108,14 @@
         android:onClick="getLocation"
         android:layout_alignBottom="@+id/textViewLocationInput"
         android:layout_toEndOf="@+id/textViewLocation" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/fragment"
+        android:layout_below="@+id/textViewLocation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        tools:layout="@layout/activity_maps" />
 </RelativeLayout>

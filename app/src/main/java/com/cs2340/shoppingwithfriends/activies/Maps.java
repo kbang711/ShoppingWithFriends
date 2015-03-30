@@ -2,11 +2,15 @@ package com.cs2340.shoppingwithfriends.activies;
 
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.cs2340.shoppingwithfriends.R;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.drive.Drive;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -77,7 +81,10 @@ public class Maps extends FragmentActivity {
             }
         }
     }
-
+    GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+            .addApi(Drive.API)
+            .addScope(Drive.SCOPE_FILE)
+            .build();
     /**
      * This is where we can add markers or lines, add listeners or move the camera. In this case, we
      * just add a marker in Atlanta and zoom in.
@@ -88,5 +95,21 @@ public class Maps extends FragmentActivity {
         LatLng coords = new LatLng(33.755, -84.39);
         mMap.addMarker(new MarkerOptions().position(coords).title("Marker"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords, 13));
+        Location currentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        double myLat = currentLocation.getLatitude();
+        double myLong = currentLocation.getLongitude();
+
+
+        LatLng loc = new LatLng(myLat,myLong);
+        MarkerOptions options = new MarkerOptions()
+                .position(loc)
+                .title("I am here!");
+        mMap.addMarker(options);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
     }
+
+    private void onConnected(Bundle bundle) {
+
+    }
+
 }

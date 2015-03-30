@@ -1,5 +1,6 @@
 package com.cs2340.shoppingwithfriends.activies;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
  * Created by Kevin Bang on 1/30/2015.
  */
 @SuppressWarnings("UnusedParameters")
-public class Registration extends ActionBarActivity {
+public class Registration extends Activity{
     private EditText username = null;
     private EditText password = null;
     private EditText password2 = null;
@@ -205,25 +206,4 @@ public class Registration extends ActionBarActivity {
 //    }
 // --Commented out by Inspection STOP (3/27/2015 2:44 PM)
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
