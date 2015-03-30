@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

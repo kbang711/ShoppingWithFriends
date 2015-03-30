@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import java.io.Serializable;
 

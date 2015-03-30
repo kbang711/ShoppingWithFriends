@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.app.NotificationManager;
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

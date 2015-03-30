@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,39 +11,38 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.cs2340.shoppingwithfriends.R;
+
 import java.util.ArrayList;
 
 /**
- * This class is the list of items a friend might have.
+ * This class looks at the list of items that you want.
  */
 @SuppressWarnings({"ALL", "UnusedParameters"})
-public class ItemList_Friend extends ActionBarActivity {
+public class ItemList_Personal extends ActionBarActivity {
     static int itemClicked;
-    static int friendClicked;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_itemlist_friend);
+        setContentView(R.layout.activity_itemlist_personal);
         ArrayList<Item> itemList = new ArrayList<>();
-        friendClicked = FriendDetail.clickedPerson;
-        //Log.d("Item List:", Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(0).getItemName());
 
         String[] itemName = new String[1];
         String[] itemLocation = new String[1];
         double[] itemPrice = new double[1];
         boolean[] itemFound = new boolean[1];
-        if (Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size() == 0) {
+        if (Login.current.getItems().size() == 0) {
             itemName[0] = "No Items Added";
         } else {
-            itemName = new String[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
-            itemLocation = new String[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
-            itemPrice = new double[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
-            itemFound = new boolean[Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size()];
-            for (int i = 0; i < Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size(); i++) {
-                itemName[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemName();
-                itemLocation[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemLocation();
-                itemPrice[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemPrice();
-                itemFound[i] = Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().get(i).getItemFound();
+            itemName = new String[Login.current.getItems().size()];
+            itemLocation = new String[Login.current.getItems().size()];
+            itemPrice = new double[Login.current.getItems().size()];
+            itemFound = new boolean[Login.current.getItems().size()];
+            for (int i = 0; i < Login.current.getItems().size(); i++) {
+                itemName[i] = Login.current.getItems().get(i).getItemName();
+                itemLocation[i] = Login.current.getItems().get(i).getItemLocation();
+                itemPrice[i] = Login.current.getItems().get(i).getItemPrice();
+                itemFound[i] = Login.current.getItems().get(i).getItemFound();
             }
         }
         for (int i = 0; i < itemName.length; i++) {
@@ -55,12 +54,12 @@ public class ItemList_Friend extends ActionBarActivity {
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Login.current.getFriends().get(FriendDetail.clickedPerson).getItems().size() == 0) {
+                if (Login.current.getItems().size() == 0) {
                     Toast.makeText(getApplicationContext(), "Please add an item first",
                             Toast.LENGTH_SHORT).show();
                 } else {
                     itemClicked = position;
-                    startActivity(new Intent(getApplicationContext(), ItemDetail_Friend.class));
+                    startActivity(new Intent(getApplicationContext(), ItemDetail_Personal.class));
                 }
             }
         });
@@ -71,7 +70,7 @@ public class ItemList_Friend extends ActionBarActivity {
      * @param view View the app is on
      */
     public void back(View view) {
-        startActivity(new Intent(getApplicationContext(), FriendDetail.class));
+        startActivity(new Intent(getApplicationContext(), MainScreen.class));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

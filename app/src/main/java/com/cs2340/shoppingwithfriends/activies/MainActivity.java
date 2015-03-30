@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

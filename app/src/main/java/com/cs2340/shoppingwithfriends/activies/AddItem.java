@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
         import android.content.Context;
         import android.os.Bundle;
         import android.support.v7.app.ActionBarActivity;
@@ -10,6 +10,8 @@ package com.cs2340.shoppingwithfriends;
         import android.widget.EditText;
         import android.widget.Toast;
         import android.view.View;
+
+        import com.cs2340.shoppingwithfriends.R;
 
         import java.io.FileOutputStream;
         import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.cs2340.shoppingwithfriends;
+package com.cs2340.shoppingwithfriends.activies;
 
 
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
+
+import com.cs2340.shoppingwithfriends.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
