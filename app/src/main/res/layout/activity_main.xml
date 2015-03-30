@@ -8,7 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
     android:background="#ffdbf5ff"
-    tools:ignore="Overdraw">
+    tools:ignore="Overdraw"
+    android:id="@+id/main_bg"
+    android:clickable="false"
+    android:elevation="100dp">
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -21,15 +24,18 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:background="@drawable/green_btn"
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30px"
         android:text="@string/Login"
         android:layout_above="@+id/button_initialRegister"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
 
     <Button
+        android:background="@drawable/grey_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Register"
@@ -37,5 +43,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button1"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/timer"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
