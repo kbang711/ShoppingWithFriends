@@ -127,7 +127,7 @@ public class Registration extends Activity{
      * @param username Username being checked for
      * @return True if Username or Email already exists in the list.
      */
-    private static boolean checkEmailUser(String email, String username) {
+    public static boolean checkEmailUser(String email, String username) {
         boolean done = false;
         for (int i = 0; i < person.size(); i++) {
             if (person.get(i).getEmail().equals(email)) {

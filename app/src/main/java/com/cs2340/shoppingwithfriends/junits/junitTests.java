@@ -66,4 +66,20 @@ public class junitTests extends InstrumentationTestCase {
         assertTrue("Friend exists", adding.checkIfFriend("Friend Two"));
         assertFalse("Friend doesn't exist", adding.checkIfFriend("Friend Three"));
     }
+
+    public void testCheckEmailUser() {
+        Registration.person.clear();
+        ArrayList<Person> friends = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<>();
+
+        Person p1 = new Person("P1", "p1@p1.com", "User1", "ps1", friends, items);
+        Person p2 = new Person("P2", "p2@p2.com", "User2", "ps2", friends, items);
+
+        Registration.person.add(p1);
+        Registration.person.add(p2);
+
+        assertTrue("Email exists", Registration.checkEmailUser("p1@p1.com", "test1"));
+        assertTrue("Username exists", Registration.checkEmailUser("email@email.com", "User2"));
+        assertFalse("Neither exist", Registration.checkEmailUser("email@email.com", "testUser"));
+    }
 }
