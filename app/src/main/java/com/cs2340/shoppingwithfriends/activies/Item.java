@@ -6,7 +6,7 @@ import java.io.Serializable;
  * This is the item class with a name, location name, price, and if it's found.
  */
 @SuppressWarnings("SameParameterValue")
-class Item implements Serializable {
+public class Item implements Serializable {
     private final String name;
     private final String location;
     private final double price;
