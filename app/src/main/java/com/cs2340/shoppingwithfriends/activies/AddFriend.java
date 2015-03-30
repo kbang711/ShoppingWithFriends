@@ -101,7 +101,7 @@ public class AddFriend extends ActionBarActivity {
      * @param name Name of the person
      * @return true if person is already a friend
      */
-    private boolean checkIfFriend(String name){
+    public boolean checkIfFriend(String name){
         ArrayList<String> nameArr = new ArrayList<>();
         for (Person item : Login.current.getFriends()){
             nameArr.add(item.getName());
