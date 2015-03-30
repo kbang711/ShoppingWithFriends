@@ -81,10 +81,7 @@ public class Maps extends FragmentActivity {
             }
         }
     }
-    GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
-            .addApi(Drive.API)
-            .addScope(Drive.SCOPE_FILE)
-            .build();
+
     /**
      * This is where we can add markers or lines, add listeners or move the camera. In this case, we
      * just add a marker in Atlanta and zoom in.
@@ -95,21 +92,17 @@ public class Maps extends FragmentActivity {
         LatLng coords = new LatLng(33.755, -84.39);
         mMap.addMarker(new MarkerOptions().position(coords).title("Marker"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords, 13));
-        Location currentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        double myLat = currentLocation.getLatitude();
-        double myLong = currentLocation.getLongitude();
+        Location myLoc = mMap.getMyLocation();
+        double myLong = myLoc.getLongitude();
+        double myLat = myLoc.getLatitude();
 
+        LatLng lng= new LatLng(myLat, myLong);
 
-        LatLng loc = new LatLng(myLat,myLong);
         MarkerOptions options = new MarkerOptions()
-                .position(loc)
+                .position(lng)
                 .title("I am here!");
         mMap.addMarker(options);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(lng));
+        mMap.addMarker(options);
     }
-
-    private void onConnected(Bundle bundle) {
-
-    }
-
 }
