@@ -9,7 +9,7 @@
     tools:context=".MainScreen"
     android:background="#ffdbf5ff"
     android:elevation="200px"
-    tools:ignore="Overdraw">
+    tools:ignore="Overdraw,PxUsage,UnusedAttribute">
 
     <TextView
         android:id="@+id/textViewMain"

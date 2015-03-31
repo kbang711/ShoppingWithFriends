@@ -3,11 +3,11 @@ package com.cs2340.shoppingwithfriends.activies;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+//import android.view.Menu;
+//import android.view.MenuItem;
 //Added more imports
 import android.widget.Button;
 import android.widget.EditText;

@@ -3,7 +3,6 @@ package com.cs2340.shoppingwithfriends.junits;
 import android.test.InstrumentationTestCase;
 
 import com.cs2340.shoppingwithfriends.activies.AddFriend;
-import com.cs2340.shoppingwithfriends.activies.AddItem;
 import com.cs2340.shoppingwithfriends.activies.Login;
 import com.cs2340.shoppingwithfriends.activies.Person;
 import com.cs2340.shoppingwithfriends.activies.Item;
@@ -20,8 +19,8 @@ public class junitTests extends InstrumentationTestCase {
     public void testCheckCredentials() {
         Registration.person.clear();
 
-        ArrayList<Person> pFriends = new ArrayList<Person>();
-        ArrayList<Item> pItems = new ArrayList<Item>();
+        ArrayList<Person> pFriends = new ArrayList<>();
+        ArrayList<Item> pItems = new ArrayList<>();
 
         Person p1 = new Person("Jack", "jack@jack.com", "jack26", "password123", pFriends, pItems);
         Person p2 = new Person("Gack", "jack@jack.com", "jack26", "password123", pFriends, pItems);

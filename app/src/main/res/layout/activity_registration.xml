@@ -9,7 +9,7 @@
     tools:context=".Registration"
     android:background="#ffdbf5ff"
     android:elevation="200px"
-    tools:ignore="Overdraw">
+    tools:ignore="Overdraw,PxUsage,UnusedAttribute">
 
     <TextView
         android:id="@+id/textView1"
