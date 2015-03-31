@@ -67,6 +67,9 @@ public class junitTests extends InstrumentationTestCase {
         assertFalse("Friend doesn't exist", adding.checkIfFriend("Friend Three"));
     }
 
+    /**
+     * Junits for checkEmailUser by Royce Kim
+     */
     public void testCheckEmailUser() {
         Registration.person.clear();
         ArrayList<Person> friends = new ArrayList<>();
