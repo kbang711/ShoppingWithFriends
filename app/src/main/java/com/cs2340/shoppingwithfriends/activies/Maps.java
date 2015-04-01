@@ -2,7 +2,7 @@ package com.cs2340.shoppingwithfriends.activies;
 
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
+//import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
