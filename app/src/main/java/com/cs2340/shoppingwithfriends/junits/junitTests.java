@@ -3,6 +3,9 @@ package com.cs2340.shoppingwithfriends.junits;
 import android.test.InstrumentationTestCase;
 
 import com.cs2340.shoppingwithfriends.activies.AddFriend;
+import com.cs2340.shoppingwithfriends.activies.AddItem;
+import com.cs2340.shoppingwithfriends.activies.FriendDetail;
+import com.cs2340.shoppingwithfriends.activies.Friends;
 import com.cs2340.shoppingwithfriends.activies.Login;
 import com.cs2340.shoppingwithfriends.activies.Person;
 import com.cs2340.shoppingwithfriends.activies.Item;
@@ -83,5 +86,56 @@ public class junitTests extends InstrumentationTestCase {
         assertTrue("Email exists", Registration.checkEmailUser("p1@p1.com", "test1"));
         assertTrue("Username exists", Registration.checkEmailUser("email@email.com", "User2"));
         assertFalse("Neither exist", Registration.checkEmailUser("email@email.com", "testUser"));
+    }
+
+    /**
+     * Junits for removeFriend by Abhilash Nair
+     */
+    public void testRemoveFriend() {
+        Registration.person.clear();
+        FriendDetail remove = new FriendDetail();
+        Friends removed = new Friends();
+        ArrayList<Person> friends = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<>();
+        Person mainPerson = new Person("Abhilash Nair","anair35@gatech.edu", "dam", "bam", friends, items);
+        Person test1 = new Person("Friend One", "friend1@gatech.edu", "friend1", "friend1", friends, items);
+        Person test2 = new Person("Friend Two", "friend2@gatech.edu", "friend2", "friend2", friends, items);
+        Person test3 = new Person("Friend Three", "friend3@gatech.edu", "friend3", "friend3", friends, items);
+        Login.current = mainPerson;
+        Registration.person.add(mainPerson);
+        Registration.person.add(test1);
+        Registration.person.add(test2);
+        Registration.person.add(test3);
+        Registration.person.get(1).getFriends().add(test1);
+        Registration.person.get(1).getFriends().add(test2);
+
+        mainPerson.getFriends().remove(test1);
+
+        assertFalse("Check for removal from friends list", mainPerson.getFriends().contains(test1));
+        assertTrue("Check for friend that is not removed from friends list", mainPerson.getFriends().contains(test2));
+
+    }
+    /**
+     * Junits for AddItem by Jihad Iqbal
+     */
+    public void testAddItem() {
+        Registration.person.clear();
+        AddItem item = new AddItem();
+        ArrayList<Person> friends = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<>();
+        Person mainPerson = new Person("Jihad Iqbal","Iqbal.j@gatech.edu", "jam", "bam", friends, items);
+        Login.current = mainPerson;
+        Registration.person.add(mainPerson);
+        Item one = new Item("phone","target", 2,  true);
+        Item two = new Item("car", "walmart", 3, false);
+        Item three = new Item("sailboat", "internet", 4, true);
+        mainPerson.getItems().add(one);
+        mainPerson.getItems().add(two);
+
+        assertTrue("Check if user added item", mainPerson.getItems().contains(one));
+        assertTrue("Check if user added item", mainPerson.getItems().contains(mainPerson.getItems().get(1)));
+        assertFalse("Check if item three is not in list", mainPerson.getItems().contains(three));
+
+
     }
 }
