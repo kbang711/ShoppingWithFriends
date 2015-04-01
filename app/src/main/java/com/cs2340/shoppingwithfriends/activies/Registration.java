@@ -146,6 +146,7 @@ public class Registration extends Activity{
      * @param s Email the user input
      * @return true if valid email
      */
+    @SuppressWarnings("WeakerAccess")
     boolean isValidEmailAddress(EditText s) {
        return s.getText().toString().matches("[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
     }
@@ -155,6 +156,7 @@ public class Registration extends Activity{
      * @param s Password user inputs
      * @return true if password matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testPassword(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
@@ -164,6 +166,7 @@ public class Registration extends Activity{
      * @param s Username the user inputs
      * @return true if the username matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testUsername(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
@@ -173,6 +176,7 @@ public class Registration extends Activity{
      * @param s Name the user inputs
      * @return true if the name matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testName(EditText s) {
         return s.getText().toString().matches("^([a-zA-Z'-]+\\s+){1,4}[a-zA-z'-]+$");
     }

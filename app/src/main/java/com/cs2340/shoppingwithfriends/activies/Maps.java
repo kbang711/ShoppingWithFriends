@@ -92,7 +92,7 @@ public class Maps extends FragmentActivity {
         LatLng coords = new LatLng(33.755, -84.39);
         mMap.addMarker(new MarkerOptions().position(coords).title("Marker"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords, 13));
-        Location myLoc = mMap.getMyLocation();
+        /**Location myLoc = mMap.getMyLocation();
         double myLong = myLoc.getLongitude();
         double myLat = myLoc.getLatitude();
 
@@ -103,6 +103,6 @@ public class Maps extends FragmentActivity {
                 .title("I am here!");
         mMap.addMarker(options);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lng));
-        mMap.addMarker(options);
+        mMap.addMarker(options);*/
     }
 }
