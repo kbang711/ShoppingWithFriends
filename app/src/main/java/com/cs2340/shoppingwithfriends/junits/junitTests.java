@@ -93,8 +93,8 @@ public class junitTests extends InstrumentationTestCase {
      */
     public void testRemoveFriend() {
         Registration.person.clear();
-        FriendDetail remove = new FriendDetail();
-        Friends removed = new Friends();
+        @SuppressWarnings("UnusedAssignment") FriendDetail remove = new FriendDetail();
+        @SuppressWarnings("UnusedAssignment") Friends removed = new Friends();
         ArrayList<Person> friends = new ArrayList<>();
         ArrayList<Item> items = new ArrayList<>();
         Person mainPerson = new Person("Abhilash Nair","anair35@gatech.edu", "dam", "bam", friends, items);
@@ -120,7 +120,7 @@ public class junitTests extends InstrumentationTestCase {
      */
     public void testAddItem() {
         Registration.person.clear();
-        AddItem item = new AddItem();
+        @SuppressWarnings("UnusedAssignment") AddItem item = new AddItem();
         ArrayList<Person> friends = new ArrayList<>();
         ArrayList<Item> items = new ArrayList<>();
         Person mainPerson = new Person("Jihad Iqbal","Iqbal.j@gatech.edu", "jam", "bam", friends, items);
