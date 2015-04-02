@@ -27,7 +27,7 @@ import java.util.ArrayList;
 @SuppressWarnings({"ALL", "UnusedParameters"})
 public class ItemDetail_Personal extends ActionBarActivity {
     private Item item;
-    private TextView textViewName, textViewPrice, textViewLocation;
+    private TextView textViewName, textViewPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,9 @@ public class ItemDetail_Personal extends ActionBarActivity {
 
         textViewName = (TextView)findViewById(R.id.textViewNameInput);
         textViewPrice = (TextView)findViewById(R.id.textViewPriceInput);
-        textViewLocation = (TextView)findViewById(R.id.textViewLocationInput);
 
         textViewName.setText(item.getItemName());
         textViewPrice.setText('$' + String.valueOf(item.getItemPrice()));
-        textViewLocation.setText(item.getItemLocation());
     }
 
     /**
