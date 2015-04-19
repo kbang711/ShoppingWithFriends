@@ -69,7 +69,7 @@ public class MainScreen extends ActionBarActivity {
      */
     public void logout(View view) {
         startActivity(new Intent(MainScreen.this, MainActivity.class));
-        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
         finish();
     }
 
