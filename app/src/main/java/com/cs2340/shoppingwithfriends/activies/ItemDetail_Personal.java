@@ -50,6 +50,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     /**
@@ -58,6 +59,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
      */
     public void getLocation(View view) {
         startActivity(new Intent(getApplicationContext(), Maps.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
     }
 
     /**
@@ -68,6 +70,7 @@ public class ItemDetail_Personal extends ActionBarActivity {
         //Item itemRemoved = Login.current.getItems().get(ItemList_Personal.itemClicked);
         Login.current.getItems().remove(ItemList_Personal.itemClicked);
         startActivity(new Intent(getApplicationContext(), ItemList_Personal.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
         Toast.makeText(getApplicationContext(), "Item Removed",
                 Toast.LENGTH_SHORT).show();
 

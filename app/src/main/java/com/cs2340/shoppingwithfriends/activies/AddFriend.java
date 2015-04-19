@@ -43,6 +43,7 @@ public class AddFriend extends ActionBarActivity {
 
         if (checkIfFriend(name.getText().toString())){
             startActivity(new Intent(getApplicationContext(), Friends.class));
+            overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
             Toast.makeText(getApplicationContext(), "Friend Already Added",
                     Toast.LENGTH_SHORT).show();
         } else {
@@ -89,6 +90,7 @@ public class AddFriend extends ActionBarActivity {
                         Toast.LENGTH_SHORT).show();
             } else {
                 startActivity(new Intent(getApplicationContext(), Friends.class));
+                overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                 Toast.makeText(getApplicationContext(), "Friend Added", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -121,6 +123,7 @@ public class AddFriend extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), Friends.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     @Override

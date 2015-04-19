@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:background="#ffdbf5ff"
+    android:background="#ffffffff"
     tools:ignore="Overdraw"
     android:id="@+id/main_bg"
     android:clickable="false"
@@ -43,5 +43,4 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button1"
         android:layout_alignParentEnd="true" />
-
 </RelativeLayout>

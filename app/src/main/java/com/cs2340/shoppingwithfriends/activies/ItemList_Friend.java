@@ -63,6 +63,7 @@ public class ItemList_Friend extends ActionBarActivity {
                 } else {
                     itemClicked = position;
                     startActivity(new Intent(getApplicationContext(), ItemDetail_Friend.class));
+                    overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                 }
             }
         });
@@ -74,6 +75,7 @@ public class ItemList_Friend extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), FriendDetail.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

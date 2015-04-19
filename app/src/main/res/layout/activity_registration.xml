@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Registration"
-    android:background="#ffdbf5ff"
+    android:background="#ffffffff"
     android:elevation="200px"
     tools:ignore="Overdraw">
 
@@ -20,107 +20,66 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="50dp"
-        android:text="@string/name_view"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_alignBottom="@+id/textViewName"
-        android:layout_toEndOf="@+id/textViewName"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textViewName"
-        android:layout_marginTop="50dp"
-        android:text="@string/email"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        tools:ignore="LabelFor"
+        android:hint="Name"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginBottom="20dp"
+        android:layout_alignStart="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewEmail"
-        android:layout_marginStart="38dp"
-        android:layout_toEndOf="@+id/textViewEmail"
         android:ems="10"
         android:inputType="textEmailAddress"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/textViewUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textViewEmail"
-        android:layout_below="@+id/textViewEmail"
-        android:layout_marginTop="38dp"
-        android:text="@string/username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:hint="Email"
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/editTextName"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/editTextUser"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewUser"
-        android:layout_toEndOf="@+id/textViewUser"
         android:ems="10"
         android:inputType="text"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/textViewPW"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textViewEmail"
-        android:layout_below="@+id/textViewUser"
-        android:layout_marginTop="38dp"
-        android:text="@string/password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:hint="Username"
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginBottom="20dp"
+        android:layout_alignStart="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextPW"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewPW"
-        android:layout_toEndOf="@+id/textViewPW"
         android:ems="10"
         android:inputType="textPassword"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/textViewPW2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textViewEmail"
-        android:layout_below="@+id/textViewPW"
-        android:layout_marginTop="38dp"
-        android:text="@string/password2"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:hint="Password"
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/editTextUser"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/editTextPW2"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewPW2"
-        android:layout_toEndOf="@+id/textViewPW2"
         android:ems="10"
         android:inputType="textPassword"
-        tools:ignore="LabelFor" />
+        android:hint="Confirm Password"
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/editTextPW"
+        android:layout_marginBottom="20dp"
+        android:layout_alignStart="@+id/editTextPW" />
 
     <Button
         android:id="@+id/buttonRegister"

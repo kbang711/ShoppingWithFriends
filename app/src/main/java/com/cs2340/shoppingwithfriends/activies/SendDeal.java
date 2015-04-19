@@ -41,6 +41,7 @@ public class SendDeal extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), ItemDetail_Friend.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     /**
@@ -68,6 +69,7 @@ public class SendDeal extends ActionBarActivity {
             manager.notify(001, mBuilder.build());
             Login.current.getFriends().get(ItemDetail_Friend.personClicked).getItems().get(ItemDetail_Friend.itemChosen).setItemFound(true);
             startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+            overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
             Toast.makeText(getApplicationContext(), "Deal Sent",
                     Toast.LENGTH_SHORT).show();
         }

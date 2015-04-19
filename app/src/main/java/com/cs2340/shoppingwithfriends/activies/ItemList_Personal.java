@@ -60,6 +60,7 @@ public class ItemList_Personal extends ActionBarActivity {
                 } else {
                     itemClicked = position;
                     startActivity(new Intent(getApplicationContext(), ItemDetail_Personal.class));
+                    overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                 }
             }
         });
@@ -71,6 +72,7 @@ public class ItemList_Personal extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

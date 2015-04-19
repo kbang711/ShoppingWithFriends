@@ -40,6 +40,7 @@ public class Friends extends ActionBarActivity implements Serializable{
                new Button.OnClickListener(){
                    public void onClick(View v) {
                        startActivity(new Intent(Friends.this, AddFriend.class));
+                       overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                    }
                }
         );
@@ -76,6 +77,7 @@ public class Friends extends ActionBarActivity implements Serializable{
                 } else {
                     personClicked = position;
                     startActivity(new Intent(Friends.this, FriendDetail.class));
+                    overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                 }
             }
         });
@@ -84,6 +86,7 @@ public class Friends extends ActionBarActivity implements Serializable{
 
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     @Override

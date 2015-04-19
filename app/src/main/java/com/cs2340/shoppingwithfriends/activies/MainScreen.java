@@ -32,6 +32,7 @@ public class MainScreen extends ActionBarActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         startActivity(new Intent(MainScreen.this,Friends.class));
+                        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
                     }
                 }
         );
@@ -50,13 +51,17 @@ public class MainScreen extends ActionBarActivity {
      */
     public void addItem(View view) {
         startActivity(new Intent(MainScreen.this, AddItem.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
     }
 
     /**
      * Goes to the Items List
      * @param view View the app is on
      */
-    public void items(View view) { startActivity(new Intent(MainScreen.this, ItemList_Personal.class)); }
+    public void items(View view) {
+        startActivity(new Intent(MainScreen.this, ItemList_Personal.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
+    }
 
     /**
      * Logs you out to the start screen
@@ -64,6 +69,7 @@ public class MainScreen extends ActionBarActivity {
      */
     public void logout(View view) {
         startActivity(new Intent(MainScreen.this, MainActivity.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
         finish();
     }
 

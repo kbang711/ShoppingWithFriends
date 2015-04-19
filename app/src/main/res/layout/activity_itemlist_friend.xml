@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemList_Friend"
-    android:background="#ffdbf5ff">
+    android:background="#ffffffff">
 
     <TextView
         android:id="@+id/textViewMain"

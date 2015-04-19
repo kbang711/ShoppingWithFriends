@@ -59,6 +59,7 @@ public class FriendDetail extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), Friends.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     /**
@@ -76,6 +77,7 @@ public class FriendDetail extends ActionBarActivity {
             }
         }*/ //I don't know how to get yourself... The if statement above is incorrect
         startActivity(new Intent(getApplicationContext(), Friends.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
         Toast.makeText(getApplicationContext(), "Removed Friend",
                 Toast.LENGTH_SHORT).show();
 
@@ -97,6 +99,7 @@ public class FriendDetail extends ActionBarActivity {
      */
     public void viewItems(View view) {
         startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
     }
 
     @Override

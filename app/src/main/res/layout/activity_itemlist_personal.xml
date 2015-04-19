@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemList_Personal"
     android:elevation="200px"
-    android:background="#ffdbf5ff">
+    android:background="#ffffffff">
 
     <TextView
         android:id="@+id/textViewMain"

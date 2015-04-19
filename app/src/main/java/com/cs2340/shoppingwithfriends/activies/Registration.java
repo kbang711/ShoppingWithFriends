@@ -3,11 +3,8 @@ package com.cs2340.shoppingwithfriends.activies;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 //Added more imports
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +51,7 @@ public class Registration extends Activity{
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         startActivity(new Intent(Registration.this,MainActivity.class));
+                        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
                     }
                 }
         );
@@ -97,6 +95,7 @@ public class Registration extends Activity{
             person.add(new Person(name.getText().toString(), email.getText().toString(),
                     username.getText().toString(), password.getText().toString(), new ArrayList<Person>(), new ArrayList<Item>()));
             startActivity(new Intent(getApplicationContext(), Login.class));
+            overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
             File file = new File(this.getFilesDir(), "data.json");
             model.saveJson(file);
             //trying out a way to save instances

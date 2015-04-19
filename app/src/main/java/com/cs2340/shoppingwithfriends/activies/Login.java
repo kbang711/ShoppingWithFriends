@@ -53,6 +53,7 @@ public class Login extends ActionBarActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         startActivity(new Intent(Login.this,MainActivity.class));
+                        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
                     }
                 }
         );
@@ -91,6 +92,7 @@ public class Login extends ActionBarActivity {
         } else if(Registration.checkCredentials(username.getText().toString(),
                 password.getText().toString())) {
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
             for (int i = 0; i < Registration.person.size(); i++) {
                 if (Registration.person.get(i).getUsername().equals(username.getText().toString())) {
                     current = Registration.person.get(i);

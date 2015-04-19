@@ -62,6 +62,7 @@ public class AddItem extends ActionBarActivity {
                     )
             );
             startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
 
             try {
                 FileOutputStream fos = getApplicationContext().openFileOutput("file", Context.MODE_PRIVATE);
@@ -84,6 +85,7 @@ public class AddItem extends ActionBarActivity {
 
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), MainScreen.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     @Override

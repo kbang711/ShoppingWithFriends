@@ -43,6 +43,7 @@ public class ItemDetail_Friend extends ActionBarActivity {
      */
     public void back(View view) {
         startActivity(new Intent(getApplicationContext(), ItemList_Friend.class));
+        overridePendingTransition(R.animator.slide_left_enter, R.animator.slide_left_exit);
     }
 
     /**
@@ -51,6 +52,7 @@ public class ItemDetail_Friend extends ActionBarActivity {
      */
     public void sendDeal(View view) {
         startActivity(new Intent(getApplicationContext(), SendDeal.class));
+        overridePendingTransition(R.animator.slide_right_enter, R.animator.slide_right_exit);
     }
 
     @Override
