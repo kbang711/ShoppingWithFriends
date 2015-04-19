@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Login"
     android:background="#ffffffff"
-    tools:ignore="Overdraw"
+    tools:ignore="Overdraw,PxUsage,UnusedAttribute"
     android:elevation="200px">
 
     <TextView

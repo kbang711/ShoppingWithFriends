@@ -2,15 +2,15 @@ package com.cs2340.shoppingwithfriends.activies;
 
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
+//import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.cs2340.shoppingwithfriends.R;
-import com.google.android.gms.common.api.GoogleApiClient;
+/**import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.drive.Drive;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationServices;*/
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -92,7 +92,7 @@ public class Maps extends FragmentActivity {
         LatLng coords = new LatLng(33.755, -84.39);
         mMap.addMarker(new MarkerOptions().position(coords).title("Marker"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords, 13));
-        Location myLoc = mMap.getMyLocation();
+        /**Location myLoc = mMap.getMyLocation();
         double myLong = myLoc.getLongitude();
         double myLat = myLoc.getLatitude();
 
@@ -103,6 +103,6 @@ public class Maps extends FragmentActivity {
                 .title("I am here!");
         mMap.addMarker(options);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lng));
-        mMap.addMarker(options);
+        mMap.addMarker(options);*/
     }
 }

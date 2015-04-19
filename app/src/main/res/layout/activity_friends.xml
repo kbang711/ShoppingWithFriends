@@ -9,7 +9,7 @@
     tools:context=".Friends"
     android:background="#ffffffff"
     android:elevation="200px"
-    tools:ignore="Overdraw">
+    tools:ignore="Overdraw,PxUsage,UnusedAttribute">
 
     <TextView
         android:id="@+id/textViewMain"

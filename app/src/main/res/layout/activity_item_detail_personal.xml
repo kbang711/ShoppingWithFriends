@@ -8,7 +8,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemDetail_Personal"
     android:elevation="200px"
-    android:background="#ffffffff">
+    android:background="#ffdbf5ff"
+    tools:ignore="PxUsage,UnusedAttribute">
 
     <TextView
         android:id="@+id/textViewMain"
@@ -68,16 +69,6 @@
         android:text="@string/location_view"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textViewLocationInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/textViewLocation"
-        android:layout_alignBottom="@+id/textViewLocation"
-        android:layout_marginStart="20dp"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-
     <Button
         android:background="@drawable/green_btn"
         android:id="@+id/buttonItemRemove"
@@ -106,9 +97,9 @@
         android:text="@string/location_button"
         android:id="@+id/location"
         android:onClick="getLocation"
-        android:layout_alignBottom="@+id/textViewLocationInput"
+        android:layout_alignBottom="@+id/textViewLocation"
         android:layout_toEndOf="@+id/textViewLocation" />
-
+    <!--
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,5 +108,5 @@
         android:layout_below="@+id/textViewLocation"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
-        tools:layout="@layout/activity_maps" />
+        tools:layout="@layout/activity_maps" /> -->
 </RelativeLayout>

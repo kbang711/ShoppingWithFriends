@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
 
-
 import com.cs2340.shoppingwithfriends.R;
 
 import java.io.FileInputStream;
@@ -23,6 +22,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
+
 
 @SuppressWarnings("unchecked")
 public class MainActivity extends ActionBarActivity {

@@ -3,8 +3,16 @@ package com.cs2340.shoppingwithfriends.activies;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+
 import android.content.Intent;
 import android.util.Log;
+
+//import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.util.Log;
+//import android.view.Menu;
+//import android.view.MenuItem;
+
 //Added more imports
 import android.widget.Button;
 import android.widget.EditText;
@@ -126,7 +134,7 @@ public class Registration extends Activity{
      * @param username Username being checked for
      * @return True if Username or Email already exists in the list.
      */
-    private static boolean checkEmailUser(String email, String username) {
+    public static boolean checkEmailUser(String email, String username) {
         boolean done = false;
         for (int i = 0; i < person.size(); i++) {
             if (person.get(i).getEmail().equals(email)) {
@@ -145,6 +153,7 @@ public class Registration extends Activity{
      * @param s Email the user input
      * @return true if valid email
      */
+    @SuppressWarnings("WeakerAccess")
     boolean isValidEmailAddress(EditText s) {
        return s.getText().toString().matches("[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
     }
@@ -154,6 +163,7 @@ public class Registration extends Activity{
      * @param s Password user inputs
      * @return true if password matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testPassword(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
@@ -163,6 +173,7 @@ public class Registration extends Activity{
      * @param s Username the user inputs
      * @return true if the username matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testUsername(EditText s) {
         return s.getText().toString().matches("[0-9A-Za-z](\\w|\\S)*$");
     }
@@ -172,6 +183,7 @@ public class Registration extends Activity{
      * @param s Name the user inputs
      * @return true if the name matches
      */
+    @SuppressWarnings("WeakerAccess")
     boolean testName(EditText s) {
         return s.getText().toString().matches("^([a-zA-Z'-]+\\s+){1,4}[a-zA-z'-]+$");
     }
