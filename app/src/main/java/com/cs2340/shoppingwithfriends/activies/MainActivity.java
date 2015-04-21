@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.view.View;
 
 import com.cs2340.shoppingwithfriends.R;
+import com.facebook.FacebookSdk;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,6 +38,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Adding username, pw, and attempts
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
         Button login = (Button)findViewById(R.id.button1);
         Button initRegister = (Button)findViewById(R.id.button_initialRegister);
 

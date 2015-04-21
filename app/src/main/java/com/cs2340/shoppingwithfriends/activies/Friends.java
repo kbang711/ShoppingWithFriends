@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 @SuppressWarnings("ALL")
 public class Friends extends ActionBarActivity implements Serializable{
-    private final ArrayList<Person> friendsList = new ArrayList<>();
+    private final ArrayList<Person> friendsList = new ArrayList<>();//dependency injection
     static int personClicked;
 
     /**

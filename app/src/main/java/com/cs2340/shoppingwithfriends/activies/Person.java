@@ -15,8 +15,8 @@ public class Person implements Serializable{
     private final String password;
     private static int rating = 0;
     private static int sales = 0;
-    private ArrayList<Person> friends = new ArrayList<>();
-    private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Person> friends = new ArrayList<>();//dependency injection
+    private ArrayList<Item> items = new ArrayList<>();//dependency injection
 
     /**
      * Constructor for a person that sets the email, username, and password
