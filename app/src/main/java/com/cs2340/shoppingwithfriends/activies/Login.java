@@ -23,10 +23,21 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.CallbackManager;
+import com.facebook.login.widget.LoginButton;
+
+import android.service.textservice.SpellCheckerService.Session;
+
+
 /**
  * Class that does the Login Page.
  */
 @SuppressWarnings({"UnusedParameters", "unchecked"})
+
 public class Login extends ActionBarActivity {
 
     /* Added variables - Kevin Bang*/
@@ -48,6 +59,47 @@ public class Login extends ActionBarActivity {
         //login(findViewById(R.id.button1));
         //Button login = (Button)findViewById(R.id.button1);
         Button cancel = (Button)findViewById(R.id.cancel);
+        LoginButton loginButton = (LoginButton)findViewById(R.id.fb_login_button);
+
+        FacebookSdk.sdkInitialize(this.getApplicationContext());
+        CallbackManager callbackManager;
+        callbackManager = CallbackManager.Factory.create();
+
+
+        private Session.StatusCallback statusCallback = new Session.StatusCallback() {
+            @Override
+            public void call(Session session, SessionState state,
+                             Exception exception) {
+                if (state.isOpened()) {
+                    Log.d("MainActivity", "Facebook session opened.");
+                } else if (state.isClosed()) {
+                    Log.d("MainActivity", "Facebook session closed.");
+                }
+            }
+        };
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Toast.makeText(getApplicationContext(), "Success",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainScreen.class));
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplicationContext(), "Cancelled",
+                        Toast.LENGTH_SHORT).show();
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                Toast.makeText(getApplicationContext(), "Error logging in",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         cancel.setOnClickListener(
                 new Button.OnClickListener(){

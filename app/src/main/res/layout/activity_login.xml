@@ -104,11 +104,12 @@
         android:layout_alignParentEnd="true"
         tools:ignore="RelativeOverlap" />
     <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
+        android:id="@+id/fb_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="28dp"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
